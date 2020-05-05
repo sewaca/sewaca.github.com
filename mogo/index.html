@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MoGo</title>
+	<!-- Подключаем основной css файл -->
+	<link rel="stylesheet" href="./sources/styles.css">
+	<!-- Добавляем шрифты -->
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="./sources/js/progress.js"></script>
+	<script type="text/javascript" src="./sources/js/tabs.js"></script>
+	<script type="text/javascript" src="./sources/js/slider_of_quotes.js"></script>
+	<script type="text/javascript" src="./sources/js/teammate_links.js"></script>
+</head>
+<body onload="setup()"> <!-- function setup in slider_of_quotes.js -->
+	<!-- Header - Начало -->
+		<header>
+			<div class="menu">
+				<div class="logo">
+					MoGo
+				</div>
+				<div class="navigation">
+					<nav>
+						<a href="#aboutus" class=""><span>About</span></a>
+						<a href="#services"><span>Service</span></a>
+						<a href="#"><span>Work</span></a>
+						<a href="#"><span>Blog</span></a>
+						<a href="#"><span>Contact</span></a>
+					</nav>
+				</div>
+			</div>
+		</header>
+	<!-- Header - Конец
+			 Div 1 - Начало -->
+		<div id="div1">
+			<div class="container">
+				<div class="text">
+					<span>Creative Template</span>
+					<h1 id="mainPage">Welcome<br /> to MoGo</h1>
+				</div>
+				<hr>
+				<div class="learn-more">
+					<button type="button" name="button">learn more</button>
+				</div>
+				<div class="progress">
+					<div class="part">
+						<progress value="0" max="5" id="intro"></progress><br />
+						<span><b>01</b> intro</span>
+					</div>
+					<div class="part">
+						<progress value="0" max="5" id="work"></progress><br />
+						<span><b>02</b> work</span>
+					</div>
+					<div class="part">
+						<progress value="0" max="5" id="about"></progress><br />
+						<span><b>03</b> about</span>
+					</div>
+					<div class="part">
+						<progress value="0" max="5" id="contacts"></progress><br />
+						<span><b>04</b> contacts</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p class="div1-fixer">
+	<!-- Конец Div 1
+			 Div 2 - Начало -->
+			 <div id="div2">
+					 <div class="content">
+						 <span class="theme-ask">What we do?</span>
+						 <h1 id="aboutus">story about us</h1>
+						 <hr>
+						 <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+						 <table class="gallery">
+							 <tr><td>
+									 <div class="photo" id="p1">
+										 <div class="container">
+											 	<p>Super team</p>
+										 </div>
+									 </div>
+							 	 	</td>
+								 	<td>
+									 <div class="photo" id="p2">
+										 <div class="container">
+										 		<p>Super team</p>
+										 </div>
+									 </div>
+							 		</td>
+									<td>
+									 <div class="photo" id="p3">
+										 <div class="container">
+										 		<p>Super team</p>
+										 </div>
+									 </div>
+							 	 	</td>
+							</tr>
+						 </table>
+					 </div>
+			 </div>
+<!-- Конец Div 2
+		 Начало промежуточной полосы -->
+		 <div id="line1" class="line-between-div2-and-div3">
+			 <div class="container">
+				 <p><b>42</b><br />Web Design Projects</p>
+				 <p><b>123</b><br />happy client</p>
+				 <p><b>15</b><br />award winner</p>
+				 <p><b>99</b><br />cup of coffee</p>
+				 <p><b>24</b><br />members</p>
+			 </div>
+		 </div>
+<!-- Конец промежуточной полосы
+		 Начало Div 3  -->
+		 <div id="div3">
+		 		<div class="container">
+		 			<p class="theme">We work with</p>
+					<h1 id="services">Amazing Services</h1>
+					<hr class="top-separation">
+					<div class="table">
+						<div class="table-row">
+							<div class="table-c">
+								<div class="container">
+									<div class="t1"><img src="./sources/img/icons/table-div3-logo-1.png"></div>
+									<div class="t2">
+										<p>Photography</p>
+										<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</span>
+									</div>
+								</div>
+							</div>
+							<div class="table-c">
+								<div class="t1"><img src="./sources/img/icons/table-div3-logo-2.png"></div>
+								<div class="t2">
+									<p>Web Design</p>
+									<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</span>
+								</div>
+							</div>
+							<div class="table-c">
+								<div class="t1"><img src="./sources/img/icons/table-div3-logo-3.png"></div>
+								<div class="t2">
+									<p>Creativity</p>
+									<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr class="separate-the-table">
+					<div class="table">
+						<div class="table-row">
+								<div class="table-c">
+									<div class="container">
+										<div class="t1"><img src="./sources/img/icons/table-div3-logo-4.png"></div>
+										<div class="t2">
+											<p>seo</p>
+											<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</span>
+										</div>
+									</div>
+								</div>
+								<div class="table-c">
+									<div class="t1"><img src="./sources/img/icons/table-div3-logo-5.png"></div>
+									<div class="t2">
+										<p>Css/Html</p>
+										<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</span>
+									</div>
+								</div>
+								<div class="table-c">
+									<div class="t1"><img src="./sources/img/icons/table-div3-logo-6.png"></div>
+									<div class="t2">
+										<p>digital</p>
+										<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</span>
+									</div>
+								</div>
+						</div>
+					</div>
+		 		</div>
+		 </div>
+<!-- Конец Div 3
+		 Начало Div 4  -->
+			<div id="div4">
+				<p class="theme">For all devices</p>
+				<h1 id="design">Unique design</h1>
+				<hr >
+			</div>
+<!-- Конец Div 4
+		 Начало Div 5  -->
+		 <div id="div5">
+			 <div class="content">
+				<p class="theme">Service</p>
+				<h1 id="do">what we do</h1>
+				<hr >
+				<p class="description">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</p>
+				<div class="container">
+				<div class="img">
+					<img src="./sources/img/div5.png" alt="">
+				</div>
+				<div class="tabs">
+					<div class="tab" id="tabN1">
+						<img src="./sources/img/div5/n1.png" alt="">
+						<span>Photography</span>
+						<img id="upArrow1" src="./sources/img/arrow_to_down.png" alt="" class="arrow" onclick="change_tab(1)">
+						<img id="downArrow1"src="./sources/img/arrow_to_up.png" alt="" class="arrow arrow-to-up" onclick="change_tab(1)">
+					</div>
+					<div class="scroll-text" id="scrollTextN1">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+
+					<div class="tab" id="tabN2">
+						<img src="./sources/img/div5/n2.png" alt="">
+						<span>Creativity</span>
+						<img id="upArrow2" src="./sources/img/arrow_to_down.png" alt="" class="arrow" onclick="change_tab(2)">
+						<img id="downArrow2"src="./sources/img/arrow_to_up.png" alt="" class="arrow arrow-to-up" onclick="change_tab(2)">
+					</div>
+					<div class="scroll-text" id="scrollTextN2">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+
+					<div class="tab" id="tabN3">
+						<img src="./sources/img/div5/n3.png" alt="">
+						<span>WEB design</span>
+						<img id="upArrow3" src="./sources/img/arrow_to_down.png" alt="" class="arrow" onclick="change_tab(3)">
+						<img id="downArrow3"src="./sources/img/arrow_to_up.png" alt="" class="arrow arrow-to-up" onclick="change_tab(3)">
+					</div>
+					<div class="scroll-text" id="scrollTextN3">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+				</div>
+				</div>
+		</div>
+	</div>
+	<!-- Линия между div.5 и div.6 -->
+	<div class="line_between_div5_and_div6">
+		<div class="container">
+			<div class="arrow_right arrow" onclick="turn_quote_left()"> <img src="./sources/img/arrow_to_left.png" alt="<"> </div>
+			<div class="quote_block_container">
+				<div class="comment"><img  src="./sources/img/under_div_5_img.png" alt="comment"></div>
+			<div class="text">
+				<p id="quote"></p>
+				<div class="hr"></div><span id="author"></span>
+			</div>
+		</div>
+			<div class="arrow_left arrow" onclick="turn_quote_right()"> <img src="./sources/img/arrow_to_right.png" alt=">"> </div>
+		</div>
+	</div>
+	<!-- Div. 6 -->
+	<div id="div6">
+		<p class="theme_question">Who we are</p>
+		<h1 id="ourTeam">Meet our team</h1>
+		<hr />
+			<!--
+				Для того, чтобы поменять ссылку на профиль одного из членов команды,
+					просто зайдите в репозиторию js, в файл teammate_links.js, там существует
+					массив links, первый элемент которого значит номер тиммэйта, а следующие 4
+					представляют из себя ссылку на профиль.
+				Чтобы подключить БД, стоит протсо передавать в тот же файл массив
+					с тем же именем, который он получает сейчас.
+				Можно подключить БД для отображения должности и ФИО сотрудника
+
+				Консультация : sewaca7@gmail.com - Булгаков Всеволод Денисович
+				Подключение пустой БД к готовому файлу js : 1000 рублей
+				Подключение непустой БД к готовому файлу js : 2500 рублей
+			-->
+		<div class="wrapper">
+		<!-- По факту: div.background - ненужный элемент, используется тут как контейнер
+					но можно добавить ему css стилей -->
+			<div class="teammate is_right_teammate">
+				<div class="background">
+					<div id="teammate1">
+						<div class="foreground">
+
+							<div class="center1">
+								<div class="center2">
+									<div class="links">
+										<div class="link facebook">
+											<div class="link_img"><a id="teammate1link1" href="#1"><img src="./sources/img/div6/facebook.png" onclick=""></a></div>
+										</div>
+										<div class="link">
+											<div class="link_img"><a id="teammate1link2" href="#2"><img src="./sources/img/div6/twitter.png" onclick=""></a></div>
+										</div>
+										<div class="link">
+											<div class="link_img"><a id="teammate1link3" href="#3"><img src="./sources/img/div6/pinterest.png" onclick=""></a></div>
+										</div>
+										<div class="link">
+											<div class="link_img"><a id="teammate1link4" href="#4"><img src="./sources/img/div6/instagram.png" onclick=""></a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<p class="name">Matthew Dix</p>
+				<p class="work_as"><i>Graphic Design</i></p>
+			</div>
+
+			<div class="teammate is_right_teammate">
+				<div class="background">
+					<div id="teammate2">
+						<div class="foreground">
+
+							<div class="center1">
+								<div class="center2">
+									<div class="links">
+										<div class="link facebook">
+											<div class="link_img"><a id="teammate2link1" href="#1"><img src="./sources/img/div6/facebook.png" onclick=""></a></div>
+										</div>
+										<div class="link">
+											<div class="link_img"><a id="teammate2link2" href="#2"><img src="./sources/img/div6/twitter.png" onclick=""></a></div>
+										</div>
+										<div class="link">
+											<div class="link_img"><a id="teammate2link3" href="#3"><img src="./sources/img/div6/pinterest.png" onclick=""></a></div>
+										</div>
+										<div class="link">
+											<div class="link_img"><a id="teammate2link4" href="#4"><img src="./sources/img/div6/instagram.png" onclick=""></a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+					</div>
+				</div>
+			</div>
+			<p class="name">Christopher Campbell</p>
+			<p class="work_as"><i>Branding/UX design</i></p>
+		</div>
+
+			<div class="teammate">
+				<div class="background">
+					<div id="teammate3">
+						<div class="foreground">
+
+							<div class="center1">
+								<div class="center2">
+									<div class="links">
+										<div class="link facebook">
+											<div class="link_img"><a id="teammate3link1" href="#1"><img src="./sources/img/div6/facebook.png" onclick=""></a></div>
+										</div>
+										<div class="link">
+											<div class="link_img"><a id="teammate3link2" href="#2"><img src="./sources/img/div6/twitter.png" onclick=""></a></div>
+										</div>
+										<div class="link">
+											<div class="link_img"><a id="teammate3link3" href="#3"><img src="./sources/img/div6/pinterest.png" onclick=""></a></div>
+										</div>
+										<div class="link">
+											<div class="link_img"><a id="teammate3link4" href="#4"><img src="./sources/img/div6/instagram.png" onclick=""></a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<p class="name">Michael Fertig </p>
+				<p class="work_as"><i>Developer</i></p>
+			</div>
+		</div>
+	</div>
+	<div class="line_with_logos">
+		<img src="./sources/img/logos_under_div6.png" alt="">
+	</div>
+</body>
+</html>

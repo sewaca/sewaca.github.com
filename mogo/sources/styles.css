@@ -1,0 +1,788 @@
+body{
+	 /* Ассоциируем шрифты :  */
+	font-family: 'Montserrat', sans-serif;
+	font-family: 'Kaushan Script', cursive;
+	font-family: 'Roboto', sans-serif;
+	/* Убираем отступы от края экрана */
+	margin: 0;
+	/* Для корректного отображения всего */
+	box-sizing: border-box;
+}
+/* Отключаем обводку при фокусе кнопок :  */
+button:active, button:focus {
+	outline : none !important ;
+}
+button::-moz-focus-inner {
+	border : 0 !important ;
+}/***/
+
+#div1{
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+	width: 100%; /* Просто для полноэкранного отображения */
+	height: 1000px;
+	overflow: hidden;
+	background-image: url("./img/top-bg.png");
+	background-repeat: no-repeat; /* Чтобы фон не повторялся  */
+	background-color: white; /* Если проблемы с картинкой используется цвет */
+}
+#div1 .container{
+	max-width: 1200px; /* По проекту */
+	width: 100%;
+	margin: 0 auto;		/* Выравнивание блока по центру */
+	padding-top: 60px;
+}
+/* $$$$$$$$$$$$$$$$$Создание меню сверху : $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+header { width: 100%; }
+.menu{
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 25px; /* Для красоты */
+	display: flex; /* Для того чтобы отображалось в одну строку */
+	justify-content: space-between; /* Чтобы было пространство между логотипом и меню */
+	align-items: center; /* Чтобы логотип и навигация были на одном уровне */
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	z-index: 1000;
+}
+.menu .logo{
+	margin-left: 30px; /* Добавлено просто для красоты */
+	/* Далее пойдет описание текста :  */
+	font-size: 30px;
+	font-family: 'Montserrat';
+	font-weight: 700;
+	color: white;
+}
+.menu nav{
+	margin-right: 15px; /* Просто для красоты */
+}
+.menu nav a{
+	display: inline;		/* Для того чтобы отображались в одну линию */
+	/* Анимация медленной смены цвета текста */
+	transition: color .2s linear;
+	/* Анимация медленного отображения полоски снизу при hover */
+	transition: border .2s linear;
+	/* Для того чтобы было пространство между a */
+	margin: 0 15px; /* Слева и справа - 15px */
+	/* Описание текста :  */
+	text-decoration: none;
+	color: white;
+	font-size: 14pt;
+	font-family: 'Montserrat';
+
+}
+.menu nav a:hover{
+	border-bottom: solid 2px #fce38a; /* Светло-желтый */
+	color: #fce38a; /* Светло-желтый */
+	padding-bottom: 4px;
+}
+/* Обеспечиваем адаптивность верстки */
+@media(max-width: 599px){
+	/* Если экран пользователя меньше 600,
+	 	 то сделаем, чтобы отображение было в столбик */
+	.menu{
+		display: block;	/* Уберем flex и space between для */
+		justify-content: center; /* Отображения адаптивной верстки */
+		width: 100vh;
+	}
+	.menu .logo { margin: 0 0 10px 0;}
+	.menu nav { margin: 0;}
+	.menu *{ /* Применим стили для всех элементов */
+		display: block; /* Сделаем так, чтобы переносились в */
+		width: 100%; 		/*  новую строку */
+		/* Для красоты :  */
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.menu nav a{ /* Отдельно пропишем для a */
+		display: block; /* Сделаем так, чтобы переносились в */
+		width: 100%; 		/*  новую строку */
+		overflow: hidden;
+		background-color: inherit;
+
+		/* Чтобы анулировать значения margin-left,
+		margin-right - Указаны сверху  */
+		margin: 0;
+		/* Для красоты :  */
+		text-align: center;
+	}
+}
+/* Div. 1 */
+#div1 .text{
+	margin-top: 60px;
+	color: white;
+	width: 100%;
+	text-align: center;
+	font-size: 72px;
+}
+
+#div1 .text h1{
+	font-weight: 700;
+	font-family: 'Montserrat';
+	font-size: 120px;
+	margin: 0;
+	margin-bottom: 30px;
+}
+
+#div1 hr{
+	background-color: white;
+	width: 3%;
+	height: 3px;
+	border: 0;
+	margin-bottom: 30px;
+}
+#div1 .learn-more {
+	text-align: center;
+}
+#div1 .learn-more button{
+	text-transform: uppercase;
+	border: 2px solid white;
+	padding: 10px 25px;
+	color: white;
+	background-color: rgba(1,1,1, 0);
+	font-family: 'Montserrat';
+	font-weight: 700;
+	font-size: 14pt;
+}
+#div1 .progress{
+	width: 100%;
+	display: table;
+	bottom: 0;
+	max-width: 1200px;
+  position: absolute;
+	margin-bottom: 20px;
+}
+#div1 .progress .part progress {
+	margin-bottom: 15px;
+	background-color: white;
+	color: #f38181;
+	height: 2px;
+	border: 0;
+}
+#div1 .progress .part progress::-webkit-progress-bar {
+	background-color: transparent;
+	color: white;
+	height: 2px;
+	border: 0;
+}
+#div1 .progress .part progress::-webkit-progress-value {
+	background-color: #f38181;
+	color: #f38181;
+	height: 2px;
+	border: 0;
+}
+#div1 .progress .part progress::-moz-progress-bar {
+	background-color: white;
+	color: #f38181;
+	height: 2px;
+	border: 0;
+}
+#div1 .progress .part{
+	display: table-cell;
+	color: white;
+	font-size: 18pt;
+	text-transform: uppercase;
+	font-family: 'Montserrat';
+}
+@media(max-width: 1025px){
+	#div1 .progress .part{
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	#div1 .progress{
+		display: block;
+		width: 100%;
+		position: absolute;
+	}
+}
+/* Блок, который находится под div1, чтобы
+	 было удобно далее работать с ним */
+.div1-fixer{
+	margin: 0;
+	width: 100%;
+	height: 1000px;
+}
+/* Часть адаптивности блока находится в самом низу документа !  */
+/* Div. 2 */
+#div2 {
+	text-align: center; /* Отцентрирование элементов внутри */
+	padding-top: 80px;
+	width: 100%;
+	background-color: white;
+	color: #333333;
+}
+#div2 .theme-ask{
+	font-family: 'Kaushan script';
+	font-size: 35px;
+}
+#div2 h1{
+	font-family: 'Montserrat';
+	font-size: 45px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+#div2 hr{
+	width: 3%;
+	height: 3px;
+	border: 0;
+	background-color: #f38181;
+}
+#div2 .info{
+	font-family: 'Roboto';
+	font-size: 27px;
+	margin: 20px 25%;
+}
+#div2 .gallery{
+	width: 100%;
+	max-width: 1200px;
+	margin:70px auto;
+
+}
+#div2 .gallery td{
+	width: 380px;
+	height: 250px;
+}
+#div2 .gallery .photo p{
+	width: 100%;
+	margin: 0;
+
+	padding-top: 110px;
+	padding-bottom: 110px;
+
+	color: white;
+	font-weight: 700;
+	font-family: 'Montserrat';
+	line-height: 30px;
+}
+#div2 .gallery .photo div{ font-size: 0px; }
+#div2 .gallery .photo div:hover{
+	font-size: 22px; /* показываем текст */
+	transition: all .2s;
+	background: linear-gradient(to top, rgba(227, 204, 124, 0.9), rgba(219, 116, 116, 0.9));
+	/* "Выплывающий блок" справа и снизу */
+	box-shadow: 10px 10px 0 #95e1d3;
+}
+#div2 .gallery .photo{
+	width: 380px;
+	height: 250px;
+	display: inline-block;
+}
+/* Ниже указаны пути к фото из галлереи :  */
+#div2 .gallery #p1{ background-image: url("./img/div2-gallery/div2_gallery_photo1.png")}
+#div2 .gallery #p2{ background-image: url("./img/div2-gallery/div2_gallery_photo2.png")}
+#div2 .gallery #p3{ background-image: url("./img/div2-gallery/div2_gallery_photo3.png")}
+/* Адаптивность галлереи */
+@media(max-width: 1249px){
+	#div2 .gallery td{
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+}
+/* Часть адаптивности блока находится в самом низу документа !  */
+/* Линия между блоками 2 и 3*/
+.line-between-div2-and-div3{
+	width: 100%;
+	height: 270px;
+	background-color: #95e1d3;
+	text-align: center;
+}
+.line-between-div2-and-div3 .container{
+	width: 100%;
+	height: 100%;
+	max-width: 1200px;
+	display: table;
+	margin: 0 auto; /* Отцентрирование блока */
+	align-items: center; /* Чтобы все находились на одной высоте */
+	text-align: center /* Чтобы всё центрировалось */
+}
+.line-between-div2-and-div3 .container p{
+	display: table-cell;
+	height: 100%;
+	width: 240px;
+	color: white;
+	text-transform: uppercase;
+	font-family: 'Montserrat';
+	font-size: 15px;
+	vertical-align: middle; /*  */
+	border: 1px solid #b5eae0;
+  border-top: 0;
+  border-bottom: 0;
+}
+.line-between-div2-and-div3 .container p b{
+	font-size: 72px;
+	font-weight: 700; /* Жирный текст */
+}
+/* Адаптивность :  */
+@media(max-width: 1249px){
+	.line-between-div2-and-div3 { height: auto; }
+	.line-between-div2-and-div3 .container p{
+		display: block;
+		height: auto;
+		width: auto;
+		border: 0;
+	}
+}
+/* Часть адаптивности блока находится в самом низу документа !  */
+/* Div 3. */
+#div3 {
+	padding-top: 90px;
+	padding-bottom: 90px;
+}
+#div3 .container{
+	width: 100%;
+	max-width: 1200px;
+
+	text-align: center;
+	margin: 0 auto;
+}
+#div3 .theme{
+	font-family: 'Kaushan Script';
+	font-size: 26px;
+	color: #333333;
+}
+#div3 h1{
+	text-transform: uppercase;
+	font-size: 30px;
+	font-family: 'Montserrat';
+	font-weight: 700;
+}
+#div3 .top-separation{
+	width: 3%;
+	height: 3px;
+	border: 0;
+	background-color: #f38181;
+	margin-bottom: 35px;
+}
+#div3 .table{	display: table; }
+#div3 .table-row {
+	display: table-row;
+	border-top: 1px solid gray;
+}
+#div3 .table-c {
+	display: table-cell;
+	padding-right: 20px;
+	box-sizing: border-box;
+  padding: 30px 40px;
+}
+#div3 .table-c .container{ display: table; }
+#div3 .table-c div { display: table-cell; }
+#div3 .table-c .t1 {
+	height: 100%;
+	vertical-align: middle;
+}
+#div3 .table-c .t2 {
+	text-align: left;
+	padding-left: 15px;
+	font-size: 15px;
+}
+#div3 .table-c .t2 p{
+	font-family: 'Montserrat';
+	font-weight: 700;
+	text-transform: uppercase;
+}
+#div3 .table-c .t2 span {
+	color: #999999;
+	font-family: 'Roboto';
+}
+.separate-the-table {
+	width: 100%;
+  background-color: #e5e5e5;
+  height: 1px;
+	border: 0;
+}
+/* адаптивность таблицы : */
+@media(max-width: 1249px){
+	.separate-the-table{ display: none; }
+	#div3 .table-c{
+		display: block;
+		width: 100%;
+		text-align: center;
+		box-sizing: border-box;
+    padding: 30px 40px;
+	}
+	#div3 .table{ width: 100%; }
+	#div3 .table-c .t1{
+		width: 100%;
+		text-align: center;
+		display: block;
+	}
+	#div3 .table-c .t2{
+		width: 100%;
+		text-align: center;
+		display: block;
+		padding: 0;
+		font-size: 20px;
+		border: 1px solid #e5e5e5;
+		border-top: 0;
+		border-left: 0;
+		border-right: 0;
+	}
+}
+/* Часть адаптивности блока находится в самом низу документа !  */
+/* Div 4 */
+#div4{
+	height: 941px;
+	background-image: url("./img/div4-bg.png");
+	text-align: center;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#div4 .theme{
+	font-family: 'Kaushan script';
+	font-size: 25px;
+	padding-top: 60px;
+}
+#div4 h1{
+	font-family: 'Montserrat';
+	font-size: 35px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+#div4 hr {
+	width: 3%;
+	height: 3px;
+	border: 0;
+	background-color: #f38181;
+	margin-bottom: 35px;
+	background-size: cover;
+}
+/* Часть адаптивности блока находится в самом низу документа !  */
+/*$$$$ Div 5 $$$$  */
+#div5 {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 100px;
+}
+#div5 .content{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+#div5 .theme{
+	font-family: 'Kaushan script';
+	font-size: 25px;
+	padding-top: 60px;
+}
+#div5 h1{
+	font-family: 'Montserrat';
+	font-size: 35px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+/* Отрезок */
+#div5 hr {
+	width: 3%;
+	height: 3px;
+	border: 0;
+	background-color: #f38181;
+	margin-bottom: 35px;
+	background-size: cover;
+	margin: 30px auto;
+}
+/* Текст "описание" блока */
+#div5 .description{
+	width: 70%;
+	margin: 0 auto;
+	font-family: 'Roboto';
+	font-size: 15px;
+	color: #999999;
+	margin-bottom: 50px;
+}
+#div5 .img { float: left; display: table-cell;}
+#div5 .tabs{
+	display: table-cell;
+	float: right;
+  width: 100%;
+  max-width: 600px;
+}
+#div5 .scroll-text {
+	display: none;
+	box-sizing: border-box;
+	height: 100px;
+  max-width: 600px;
+  background: #fff;
+  border: 1px solid #C1C1C1;
+  overflow-y: scroll;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+#div5 .scroll-text p{
+	margin: 0;
+	padding: 15px;
+	color: #797979;
+}
+#div5 .tab{
+	width: 100%;
+  max-width: 568px;
+  padding: 15px;
+  line-height: 30px;
+  height: 30px;
+  align-items: center;
+	border: 1px solid #C1C1C1;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+#div5 #tabN1{ margin-top: 0; }
+#div5 .tab img{
+	float: left;
+	margin-right: 20px;
+}
+#div5 .tab span{
+	float: left;
+	font-size: 25px;
+	text-transform: uppercase;
+}
+#div5 .tab .arrow{
+	float: right;
+	margin: 8px 0;
+	cursor: pointer;
+}
+#div5 .tab .arrow-to-up{
+	display: none;
+}
+#div5 .container{
+	display: table;
+	width: 100%;
+}
+@media(max-width: 1199px){
+	#div5 .img{
+		width: 100%;
+		display: block;
+		float: none;
+		margin-bottom: 25px;
+	}
+	#div5 .tabs{
+		text-align: center;
+		margin: 0 auto;
+		display: block;
+		float: none;
+	}
+	#div5 .tab{
+		width: auto;
+	}
+}
+/* Часть адаптивности блока находится в самом низу документа !  */
+/* Line between div5 and div6 */
+.line_between_div5_and_div6{
+	width: 100%;
+	background-color: #f8f8f8;
+}
+/* Для удобства объявим контейнер, на весь блок */
+.line_between_div5_and_div6 .container{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: table;
+	padding: 60px 0;
+}
+/* Стрелки */
+.line_between_div5_and_div6 .arrow {
+	font-size: 30px;
+	color: #cccccc;
+	box-sizing: border-box;
+	cursor: pointer;
+	padding: 0 20px;
+
+	/* Чтобы не мучаться с padding - ставим display: table-cell и vertical-align */
+	vertical-align: middle;
+	display: table-cell;
+}
+.line_between_div5_and_div6 .arrow_left{
+	width: 12px; /* Не в строчку, просто для крастоты */
+}
+/* Просто для элешантной реализации таблицы */
+.line_between_div5_and_div6 .quote_block_container{
+	display: table;
+	height: 180px;
+}
+/* Картинка с изображением комментария */
+.line_between_div5_and_div6 .comment{
+	padding: 45px;
+	border: 3px solid #95e1d3;
+	vertical-align: middle;
+	display: table-cell;
+}
+/* Блок, включающий в себя цитату и её автора */
+.line_between_div5_and_div6 .text{
+	height: 150px;
+	vertical-align: middle;
+	margin-right: 30px;
+	margin-left: 30px;
+	display: table-cell;
+	padding-left: 20px;
+}
+/* Текст цитаты */
+.line_between_div5_and_div6 .text #quote{
+	color: #999999;
+	font-family: 'Roboto';
+	font-size: 24px;
+}
+/* Линия - отчерк перед автором цитаты */
+.line_between_div5_and_div6 .text .hr{
+	display: inline-block;
+  width: 5%;
+  height: 3px;
+  border: 0;
+  background-color: #d98080;
+}
+/* Автор цитаты */
+.line_between_div5_and_div6 .text #author{
+	color: #333333;
+	font-family: 'Kaushan script';
+	font-size: 24px;
+	font-weight: 700;
+	margin-left: 10%;
+}
+/* Часть адаптивности блока находится в самом низу документа !  */
+/* Блок адаптивный, так что указывать @media не нужно */
+/* Div. 6 */
+#div6{
+	padding: 100px 0;
+	text-align: center;
+	width: 100%;
+}
+#div6 .theme_question{
+	font-family: 'Kaushan script';
+	font-size: 24px;
+	color: #333333;
+	margin: 0 0 10px 0;
+}
+#div6 h1{
+	font-family: 'Montserrat';
+	font-size: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #333333;
+	margin-bottom: 40px;
+}
+#div6 hr {
+	width: 3%;
+	height: 3px;
+	border: 0;
+	background-color: #f38181;
+	background-size: cover;
+}
+#div6 .wrapper{
+	display: table;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+#div6 .wrapper .teammate{
+	display: table-cell;
+	/* 380х470 */
+}
+#div6 .wrapper .is_right_teammate{
+	padding-right: 5%;
+}
+#div6 .wrapper .teammate .background .foreground{
+	width: 380px;
+	height: 470px;
+}
+#div6 .wrapper .teammate .background .foreground:hover{
+	background: linear-gradient(to top, rgba(227, 204, 124, 0.9), rgba(219, 116, 116, 0.9));
+	transition: all .6s;
+	box-shadow: 10px 10px 0 #95e1d3;
+}
+#div6 .wrapper .teammate .background .foreground:hover .link{
+	display: table-cell;
+}
+/* Фото членов команды */
+#div6 #teammate1{ background-image: url("./img/div6/teammate1.png"); }
+#div6 #teammate2{ background-image: url("./img/div6/teammate2.png"); }
+#div6 #teammate3{ background-image: url("./img/div6/teammate3.png"); }
+/* Таблица с ссылками на тиммэйтов: td{ 26х26 } */
+#div6 .wrapper .teammate .center1{
+	/* Для возможности легко выравнять по вертикали */
+	display: table;
+	/* Для того чтобы картинка "не ездила": */
+	position: absolute;
+	width: 380px;
+	height: 470px;
+}
+#div6 .wrapper .teammate .center2{
+	/* Выравниваем по вертикали */
+	display: table-cell;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+}
+#div6 .wrapper .teammate .links {
+	margin: 0 auto;
+	display: table;
+}
+#div6 .wrapper .teammate .links .link{
+	display: none;
+	border: 2px solid #f38181;
+	border-left: 0;
+	background-color: #fce38a;
+	cursor: pointer;
+}
+#div6 .wrapper .teammate .links .facebook{
+	border-left: 2px solid #f38181;
+	background-color: #f38181;
+}
+#div6 .wrapper .teammate .links .link .link_img{
+	width: 26px;
+	height: 26px;
+	padding: 10px;
+}
+#div6 .wrapper .teammate .name {
+	text-transform: uppercase;
+	font-size: 15px;
+	font-family: 'Montserrat';
+	color: #333333;
+	font-weight: 700;
+	margin-bottom: 0;
+}
+#div6 .wrapper .teammate .work_as{
+	font-size: 15px;
+	font-family: 'Roboto';
+	color: #999999;
+	margin-top: 0;
+}
+@media(max-width: 1199px){
+	#div6 .wrapper .teammate{
+		display: block;
+		width: 380px;
+		margin: 0 auto;
+	}
+	#div6 .wrapper .is_right_teammate{
+		padding: 0;
+	}
+}
+/*Линия с логотипами под блоком*/
+.line_with_logos{
+	padding: 50px 20px;
+  background-color: #f8f8f8;
+	/* Для того, чтобы ширина не добовляла белую полосу справа */
+	box-sizing: border-box;
+}
+.line_with_logos img{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: block;
+}
+/* Адаптивность добавлена в самом низу css файла */
+
+/* Данные строчки служат для адаптивности :  */
+@media(max-width: 599px){
+	#div1 .text{ margin-top: 180px; font-size: 30px; }
+	#div1 .text h1{ font-size: 60px; }
+	#div1 { width: 100vh;}
+	#div2 {width: 100vh;}
+	.line-between-div2-and-div3{ width: 100vh;	}
+	#div3 { width: 100vh; }
+	#div4 { width: 100vh; }
+	#div5 { width: 100vh; }
+	.line_between_div5_and_div6{ width: 100vh; }
+	#div6 { width: 100vh; }
+	.line_with_logos{ width: 100vh; }
+}
