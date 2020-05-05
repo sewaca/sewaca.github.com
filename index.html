@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Название веб страницы -->
+  <title>CUDA</title>
+  <!-- Подключение шрифтов -->
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,400i,700&display=swap" rel="stylesheet">
+  <!-- Подключаем стили к сайту -->
+  <link rel="stylesheet" href="./sources/styles.css">
+  <!-- Подключаем нужные .js файлы -->
+  <script src="./sources/js/gallery.js"></script>
+</head>
+<body>
+  <!-- Header - Top Menu -->
+  <header>
+    <div class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="./sources/img/logo.png" alt="">
+        </div>
+        <div class="table">
+          <div class="tc"><a href="#div2"><span>home</span></a></div>
+          <div class="tc"><a href="#div3"><span>About</span></a></div>
+          <div class="tc"><a href="#div5"><span>work</span></a></div>
+          <div class="tc"><a href="#div6"><span>blog</span></a></div>
+          <div class="tc"><a href="#div7"><span>contact</span></a></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Div 1. -->
+  <div id="div1">
+    <div class="container">
+      <div class="text">
+        <p>
+          Hi there! We are the new kids on the block
+          and we build awesome websites and mobile apps.
+        </p>
+      </div>
+      <!-- NOTE document.location.href - переадресация на другой сайт (иммитация a href) -->
+      <button onclick="document.location.href = 'http://www.google.ru'">
+        Work With Us!
+      </button>
+    </div>
+  </div>
+  <!-- Div 2. -->
+  <div id="div2">
+    <div class="container">
+      <div class="title">
+        <h1 id="services">SERVICES WE PROVIDE</h1>
+      </div>
+      <div class="line"></div>
+      <div class="description">
+        <p>
+          We are working with both individuals and businesses from all over the globe to create awesome websites and applications.
+        </p>
+      </div>
+      <div class="table">
+        <div class="tc">
+          <div class="img">
+            <img src="./sources/img/flag.png" alt="flag">
+          </div>
+          <div class="row_name">
+            <p>Branding</p>
+          </div>
+          <div class="row_description">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+          </div>
+        </div>
+        <div class="tc">
+          <div class="img">
+          <img src="./sources/img/pencil.png" alt="flag">
+          </div>
+          <div class="row_name">
+            <p>Design</p>
+          </div>
+          <div class="row_description">
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem  </p>
+          </div>
+        </div>
+        <div class="tc">
+          <div class="img">
+          <img src="./sources/img/settings.png" alt="flag">
+          </div>
+          <div class="row_name">
+            <p>Development</p>
+          </div>
+          <div class="row_description">
+            <p>At vero eos et accusamus et iusto odio dignissimos qui blanditiis praesentium.</p>
+          </div>
+        </div>
+        <div class="tc">
+          <div class="img">
+          <img src="./sources/img/rocket.png" alt="flag">
+          </div>
+          <div class="row_name">
+            <p>ROCKET SCIENCE</p>
+          </div>
+          <div class="row_description">
+            <p>Et harum quidem rerum est et expedita distinctio. Nam libero tempore.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="div3">
+    <div class="container">
+      <h1>MEET OUR BEAUTIFUL TEAM</h1>
+      <div class="line"></div>
+      <div class="description">
+        <p>We are a small team of designers and developers, who help brands with big ideas.</p>
+      </div>
+      <div class="table">
+        <div class="tc">
+          <div class="photo_container">
+            <div class="photo">
+              <img src="" alt="">
+            </div>
+          </div>
+          <div class="teammates_name">
+            <p>ANNE HATHAWAY</p>
+          </div>
+          <div class="teammates_job">
+            <p>CEO / Marketing Guru</p>
+          </div>
+          <div class="teammates_description">
+            <p>Duis aute irure dolor in in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat non diam proident.</p>
+          </div>
+          <div class="links">
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/Facebook.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/Twitter.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/LinkedIn.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/Mail.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc">
+          <div class="photo_container">
+            <div class="photo">
+              <img src="" alt="">
+            </div>
+          </div>
+          <div class="teammates_name">
+            <p>Kate Upton</p>
+          </div>
+          <div class="teammates_job">
+            <p>Creative Director</p>
+          </div>
+          <div class="teammates_description">
+            <p>Nemo enim ipsam voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem nesciunt.</p>
+          </div>
+          <div class="links">
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/Facebook.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/Twitter.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/LinkedIn.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/Mail.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="tc">
+          <div class="photo_container">
+            <div class="photo">
+              <img src="" alt="">
+            </div>
+          </div>
+          <div class="teammates_name">
+            <p>Olivia Wilde</p>
+          </div>
+          <div class="teammates_job">
+            <p>Lead Designer</p>
+          </div>
+          <div class="teammates_description">
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+          </div>
+          <div class="links">
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/Facebook.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/Twitter.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/LinkedIn.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/Mail.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc">
+          <div class="photo_container">
+            <div class="photo">
+              <img src="" alt="">
+            </div>
+          </div>
+          <div class="teammates_name">
+            <p>Ashley Greene</p>
+          </div>
+          <div class="teammates_job">
+            <p>SEO / Developer</p>
+          </div>
+          <div class="teammates_description">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+          </div>
+          <div class="links">
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/Facebook.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/Twitter.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/LinkedIn.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="link">
+              <div class="content">
+                <a href="">
+                  <img src="./sources/img/Mail.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="div4">
+    <div class="container">
+      <h1>WE GOT SKILLS!</h1>
+      <div class="line"></div>
+      <div class="description"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+      <div class="table">
+        <div class="tc">
+          <div class="part"><img src="./sources/img/90.png" alt=""></div>
+          <div class="name_of_skill"><p>web design</p></div>
+        </div>
+        <div class="tc">
+          <div class="part"><img src="./sources/img/75.png" alt=""></div>
+          <div class="name_of_skill"><p>HTML / CSS</p></div>
+        </div>
+        <div class="tc">
+          <div class="part"><img src="./sources/img/70.png" alt=""></div>
+          <div class="name_of_skill"><p>graphic design</p></div>
+        </div>
+        <div class="tc">
+          <div class="part"><img src="./sources/img/85.png" alt=""></div>
+          <div class="name_of_skill"><p>UI / UX</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="div5">
+    <div class="container">
+      <h1>OUR PORTFOLIO</h1>
+      <div class="line"></div>
+      <div class="description">
+        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam</p>
+      </div>
+      <!-- NOTE:Реализация галереи с помощью добовления <style> через
+                js в div#displayer
+                Можно переработать реализацию, но
+                 данный способ реалищзовать галерею идеально подойдет
+                 для слабого сервера-->
+      <div class="gallery">
+        <!-- Таблица с кнопками для смены отображаемых картинок -->
+        <div class="buttons">
+          <!-- NOTE Важно заметить : onclick событие настроено на div, а не на сам button -->
+          <div class="button" onclick="display_photo('all')">
+            <button id="all">all</button>
+          </div>
+          <div class="button" onclick="display_photo('web')">
+            <button id="web">WEB</button>
+          </div>
+          <div class="button" onclick="display_photo('apps')">
+            <button id="apps">apps</button>
+          </div>
+          <div class="button" onclick="display_photo('icons')">
+            <button id="icons">icons</button>
+          </div>
+        </div>
+        <!-- Сам блок с картинками -->
+        <div class="photo_table">
+          <!--
+          Картинки вставлять внутрь div
+          sources/img/gallery/1.png
+          sources/img/gallery/2.png
+          sources/img/gallery/3.png
+          sources/img/gallery/4.png
+          ...  -->
+          <div class="icons all"></div>
+          <div class="icons"></div>
+          <div class="icons"></div>
+          <div class="icons"></div>
+          <div class="apps all"></div>
+          <div class="apps"></div>
+          <div class="apps"></div>
+          <div class="apps"></div>
+          <div class="web all"></div>
+          <div class="web"></div>
+          <div class="web"></div>
+          <div class="web all"></div>
+        </div>
+        <!-- "Блок, отвечающий исключительно за реализацию : " -->
+        <div id="displayer" style="display: none"></div>
+        <!-- Кнопка "ОТОБРАЗИТЬ ВСЕ РАБОТЫ" -->
+        <div class="show_more">
+          <div class="button">
+            <a href="https://drive.google.com/">LOAD MORE PROJECTS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="div6">
+    <div class="container">
+      <h1>WHAT POEPLE SAY ABOUT US</h1>
+      <div class="line"></div>
+      <p class="description">Our clients love us!</p>
+
+      <div class="feedbacks">
+        <div class="feedback first_feedback_in_line">
+          <div class="content">
+            <div class="photo"></div>
+            <div class="feedback_text">
+              <div><p class="text">“Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.”</p></div>
+              <div><p id="author">Chanel Iman</p></div>
+              <div><p class="author_work">CEO of Pinterest</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feedback">
+          <div class="content">
+            <div class="photo"></div>
+            <div class="feedback_text">
+              <div><p class="text">“Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta.”</p></div>
+              <div><p id="author">ADRIANA LIMA</p></div>
+              <div><p class="author_work">Founder of Instagram</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feedbacks second_table_of_feedbacks">
+        <div class="feedback first_feedback_in_line">
+          <div class="content">
+            <div class="photo"></div>
+            <div class="feedback_text">
+              <div><p class="text">“Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta.”</p></div>
+              <div><p id="author">ANNE HATHAWAY</p></div>
+              <div><p class="author_work">Lead Designer at Behance</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="feedback">
+          <div class="content">
+            <div class="photo"></div>
+            <div class="feedback_text">
+              <div><p class="text">“Phasellus non purus vel arcu tempor commodo. Fusce semper, purus vel luctus molestie, risus sem cursus neque.”</p></div>
+              <div><p id="author">EMMA STONE</p></div>
+              <div><p class="author_work">Co-Founder of Shazam</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="div7">
+    <div class="container">
+      <h1>GET IN TOUCH</h1>
+      <div class="line"></div>
+      <p class="description">1600 Pennsylvania Ave NW, Washington, DC 20500, United States of America. Tel: (202) 456-1111</p>
+      <form action="action.php" method="POST">
+        <div class="first_input_line">
+          <input type="text" name="name" placeholder="Name" class="first_input_in_line">
+          <input type="text" name="email" placeholder="Email">
+        </div>
+        <div class="message_input">
+          <textarea name="mes" placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" name="send">SEND MESSAGE</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="link_table">
+        <div class="link"><a href="https://facebook.com">Facebook</a></div>
+        <div class="link"><a href="https://twitter.com">Twitter</a></div>
+        <div class="link"><a href="https://google.com">Google+</a></div>
+        <div class="link"><a href="https://LinkedIn.com">LinkedIn</a></div>
+        <div class="link"><a href="https://Behance.com">Behance</a></div>
+        <div class="link"><a href="https://Dribbble.com">Dribbble</a></div>
+        <div class="link"><a href="https://github.com">GitHub</a></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
