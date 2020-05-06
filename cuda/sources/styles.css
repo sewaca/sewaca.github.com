@@ -1,0 +1,621 @@
+body{
+  margin: 0;
+  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Titillium Web';
+  width: 100%;
+}
+/* Отключим обводку для элементов, на которые может быть направлен фокус :  */
+button:active, button:focus { outline: none !important; }
+button::-moz-focus-inner { border: 0 !important; }
+input:active, input:focus { outline: none !important; }
+input::-moz-focus-inner { border: 0 !important; }
+textarea:active, textarea:focus { outline: none !important; }
+textarea::-moz-focus-inner { border: 0 !important; }
+/* Существуют общие элементы для большинства Div */
+.line{ /* Отчерк после h1 в большинстве div */
+  width: 7%;
+  height: 5px;
+  margin: 0 auto; /* отцентровка */
+}
+.container{ /* содержимое каждого div хранится в div.container */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header{
+  background-color: #87509c;
+  box-sizing: content-box;
+  padding: 40px 0;
+}
+.header .container{
+  height: 45px;
+}
+.header .logo {
+  display: inline-block;
+  float: left;
+  margin-left: 20px;
+  cursor: pointer;
+  /* Сделаем логотип невыделяемым :  */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.header .table{
+  display: table;
+  float: right;
+  height: 45px;
+  margin-right: 20px;
+}
+.header .table .tc{
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+  padding-right: 20px;
+}
+.header .table .tc a {
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  /* Сделаем ссылки невыделяемыми :  */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.header .table .tc a:hover{
+  background-color: #643a79;
+  transition: .4s;
+}
+.header .table .tc a span{
+  color: white;
+  font-family: 'Titillium Web';
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+/* Адаптивность для header'a */
+@media(max-width:619px){
+  .header .container{ height: auto; }
+  .header .logo{
+    display: block;
+    width: 100%;
+    text-align: center;
+    float: none;
+    margin: 0;
+  }
+  .header .table{
+    float: none;
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+  .header .table .tc{
+    display: block;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    float: none;
+    height: auto;
+    margin: 20px 0;
+  }
+}
+/* Div. 1 */
+#div1{
+  background-color: #87509c;
+  color: white;
+  font-family: 'Titillium Web';
+  text-align: center;
+  padding: 40px 0;
+}
+#div1 .text{
+  /* Настройки текста */
+  font-size: 42px;
+  font-weight: 600;
+  font-family: 'Titillium Web';
+  width: 70%;
+  margin: 0 auto; /* Отцентрируем блок с текстом */
+}
+#div1 button{
+  /* Для красоты отступы */
+  margin-bottom: 80px;
+  margin-top: 20px;
+  /* Текст внутри кнопки */
+  text-transform: uppercase;
+  font-size: 18px;
+  color: white;
+  /* Внешний вид кнопки */
+  padding: 20px;
+  width: 20%;
+  background-color: #eb7d4b; /* Оранжевый */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;  /* При наведении курсор - указатель */
+  box-shadow: 0 3px 0 0 #c86a40; /* Темнооранжевый */
+  /* Для корректного отображения */
+  box-sizing: content-box;
+  /* Сделаем текст внутри кнопки невыделяемым :  */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#div2{
+  background-color: #17c2a4;
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+}
+#div2 h1{
+  font-size: 40px;
+  font-weight: bold;
+}
+#div2 .line{
+  background-color: #14a58c;
+}
+#div2 .description{
+  font-size: 18px;
+  width: 50%;
+  margin: 0 auto; /* Отцентрируем */
+  margin-bottom: 40px;
+}
+#div2 .table{
+  display: table;
+  width: 100%;
+}
+#div2 .tc{
+  display: table-cell;
+  width: 25%;
+}
+#div2 .tc .img{
+  width: 100%;
+  text-align: center;
+  /* Отключим выделение :  */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#div2 .tc .row_name{
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+#div2 .tc .row_description{
+  width: 80%;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 300;
+}
+/* Адаптивность для div2 */
+@media(max-width: 620px){
+  #div2 .table { display: block; width: 100%; }
+  #div2 .tc{ display: block; width: 100%; }
+}
+#div3{
+  padding: 80px 0;
+  background-color: #e7f1f8;
+  color: #3c4761;
+  text-align: center;
+}
+#div3 h1{
+  font-size: 41px;
+  font-weight: bold;
+}
+#div3 .line {
+  background-color: #c8d9e5;
+}
+#div3 .description{
+  font-size: 19px;
+  font-weight: 400;
+  width: 60%;
+  margin: 0 auto;
+}
+#div3 .table{ display: table; width: 100%; }
+#div3 .tc {
+  display: table-cell;
+}
+#div3 .photo_container{
+  width: 100%;
+}
+#div3 .tc .photo {
+  background-color: #878787;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#div3 .tc .photo *{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+#div3 .teammates_name{
+  color: #27283d;
+  font-weight: bold;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+#div3 .teammates_job{
+  color: #30bae7;
+  font-size: 16px;
+  font-weight: 400;
+}
+#div3 .teammates_name p{ margin-bottom: 0;}
+#div3 .teammates_job p{ margin: 0; }
+#div3 .teammates_description{
+  width: 80%;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 300;
+  color: #3c4761;
+}
+#div3 .links {
+  /* Отключим выделение :  */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#div3 .link {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #bdd1df;
+}
+#div3 .link .content{
+  height: 17px;
+  width: 17px;
+  overflow: hidden;
+}
+#div3 .links a{
+  height: 17px;
+  width: 17px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+#div3 .link:hover{
+  transition: .4s;
+  background: #9099a8;
+}
+@media (max-width: 999px) {
+  #div3 .table{ display: block; }
+  #div3 .tc{
+    display: block;
+    width: 100%;
+    margin-top: 60px;
+  }
+  #div3 .tc .teammates_description{
+    width: 50%;
+  }
+}
+#div4 {
+  background-color: white;
+  padding: 60px 0;
+  text-align: center;
+  color: #3c4761;
+}
+#div4 h1{
+  font-size: 40px;
+}
+#div4 .line{
+  background-color: #dfe8ed;
+}
+#div4 .description{
+  width: 50%;
+  margin: 0 auto;
+  font-size: 18px;
+}
+#div4 .table {
+  margin-top: 80px;
+  display: table;
+  width: 100%;
+}
+#div4 .tc {
+  display: table-cell;
+}
+#div4 .tc .name_of_skill{
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  color: #3c4761;
+}
+@media(max-width: 800px){
+  #div4 .table{ display: table;}
+  #div4 .tc {
+    display: table;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+#div5 {
+  padding: 80px 0;
+  background-color: #ffdd99;
+  text-align: center;
+  color: #393939;
+}
+#div5 h1{
+  font-size: 40px;
+  font-weight: bold;
+}
+#div5 .line{ background-color: #e5c37f;}
+#div5 .description{
+  font-size: 18px;
+  width: 60%;
+  margin: auto;
+}
+#div5 .gallery .buttons {
+  width: 50%;
+  margin: auto;
+}
+#div5 .gallery .button {
+  width: 85px;
+  display: inline-block;
+}
+#div5 .gallery .buttons button{
+  text-transform: uppercase;
+  width: 100%;
+  padding: 15px;
+  background-color: #ebc985;
+  border: none;
+  border-radius: 10px;
+  color: #393939;
+  font-size: 18px;
+  cursor: pointer;
+  /* Сделаем текст в кнопке невыделяемым :  */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#div5 .gallery #all{ background-color: white;}
+#div5 .gallery .photo_table{
+  width: 100%;
+  margin-top: 30px;
+}
+#div5 .gallery .photo_table div{
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+}
+#div5 .gallery .photo_table .icons{
+  display: none;
+  background-color: darkred;
+}
+#div5 .gallery .photo_table .apps{
+  display: none;
+  background-color: cadetblue;
+}
+#div5 .gallery .photo_table .web{
+  display: none;
+  background-color: chocolate;
+}
+#div5 .gallery .photo_table .all  { display: inline-block;}
+@media(max-width: 460px){
+  #div5 .gallery .photo_table div{
+    width: calc(100% - 40px);
+    height: 300px;
+    margin: 20px auto;
+  }
+}
+#div5 .gallery .show_more{
+  margin: 20px auto;
+}
+#div5 .gallery .show_more .button{
+  /* Чтобы текст в кнопке был в одну строку добавим  */
+  width: auto;
+  /* Внешний вид рамки :  */
+  border: 0;
+  border-radius: 5px;
+  /* Сделаем отступы от края */
+  padding: 20px 40px;
+  background-color: #17c2a4; /* Зеленый */
+  /* Тень от кнопки : */
+  box-shadow: 0 5px #14a58c;
+  cursor: pointer;
+}
+#div5 .gallery .show_more .button a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  /* Чтобы визуально было понятно что это кнопка сделаем */
+  cursor: pointer;
+}
+#div6{
+  padding: 80px 0;
+  background-color: #d74680;
+  color: white;
+  text-align: center;
+}
+#div6 h1{
+  font-size: 40px;
+  font-weight: 400;
+}
+#div6 .line{ background-color: #b73c6d; }
+#div6 .desription{
+  font-size: 18px;
+}
+#div6 .feedbacks{
+  display: table;
+  width: calc(100% - 100px);
+  margin: 0 auto;
+}
+#div6 .second_table_of_feedbacks{
+  margin-top: 100px;
+}
+#div6 .feedbacks .feedback{
+  display: table-cell;
+  width: 45%;
+}
+#div6 .first_feedback_in_line{
+  padding-right: 10%;
+}
+#div6 .feedback .photo{
+  float: left;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #787878;
+  margin-right: 50px;
+  margin-bottom: 100px;
+}
+#div6 .feedback .feedback_text{
+  text-align: left;
+}
+#div6 .feedback .feedback_text p{
+  margin: 0;
+}
+#div6 .feedback .text{
+  font-size: 21px;
+  font-style: italic;
+}
+#div6 .feedback #author{
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#div6 .feedback .author_work{
+  font-size: 18px;
+  color: #ffdd99;
+}
+@media(max-width: 960px){
+  #div6 .feedback .feedback_text{
+    height: 300px;
+  }
+  #div6 .feedbacks{
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+  #div6 .feedbacks .feedback{
+    display: block;
+    margin: auto;
+    width: 80%;
+  }
+  #div6 .first_feedback_in_line{
+    padding: 0;
+  }
+}
+@media(max-width: 550px){
+  #div6 .feedback .photo{
+    margin: 0;
+    float: none;
+    margin: 0 auto 30px auto;
+  }
+  #div6 .feedback .feedback_text{
+    height: auto;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+}
+#div7{
+  padding: 80px 0;
+  background-color: #3c5499;
+  color: white;
+  text-align: center;
+}
+#div7 h1{
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#div7 .line {background-color: #273a71;}
+#div7 .description{
+  font-size: 18px;
+}
+#div7 form {
+  width: 70%;
+  margin: 0 auto;
+}
+#div7 .first_input_in_line{
+  margin-right: 6%;
+}
+#div7 form input{
+  width: 46%;
+  box-sizing: border-box;
+  border: 0;
+  padding: 20px 30px;
+  color: white;
+  font-size: 18px;
+  font-family: 'Titillium Web';
+  background-color: #273a71;
+  border-radius: 5px;
+}
+/* Поменяем стиль placeholder у всех input */
+input[type="text"]::-moz-placeholder {
+ color: white;
+ font-size: 18px;
+ font-family: 'Titillium Web';
+}
+input[type="text"]::-webkit-input-placeholder { color: white; font-size: 18px; font-family: 'Titillium Web'; }
+input[type="text"]:-ms-input-placeholder { color: white; font-size: 18px; font-family: 'Titillium Web'; }
+input[type="text"]::-ms-input-placeholder { color: white; font-size: 18px; font-family: 'Titillium Web'; }
+input[type="text"]::placeholder { color: white; font-size: 18px; font-family: 'Titillium Web'; }
+#div7 .first_input_line{
+  margin-bottom: 30px;
+}
+#div7 textarea[name="mes"]{
+  width: 98%;
+  border: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  color: white;
+  font-size: 18px;
+  font-family: 'Titillium Web';
+  background-color: #273a71;
+  height: 200px;
+}
+textarea[name="mes"]::-moz-placeholder {
+ color: white;
+ font-size: 18px;
+ font-family: 'Titillium Web';
+}
+textarea[name="mes"]::-webkit-input-placeholder { color: white; font-size: 18px; font-family: 'Titillium Web'; }
+textarea[name="mes"]:-ms-input-placeholder { color: white; font-size: 18px; font-family: 'Titillium Web'; }
+textarea[name="mes"]::-ms-input-placeholder { color: white; font-size: 18px; font-family: 'Titillium Web'; }
+textarea[name="mes"]::placeholder { color: white; font-size: 18px; font-family: 'Titillium Web'; }
+#div7 .message_input{
+  margin-bottom: 50px;
+}
+#div7 form button{
+  font-size: 18px;
+  color: white;
+  padding: 20px 60px;
+  background-color: #30bae7;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 3px #299ec5;
+}
+.footer{
+  background-color: #344b8e;
+  padding: 20px 40px;
+}
+.footer .link_table{
+  display: table;
+  width: 100%;
+}
+.footer .link_table .link{
+  display: table-cell;
+}
+.footer .link_table .link a{
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-family: 'Titillium Web';
+  cursor: pointer;
+}
+.footer .link_table .link a:hover{ color: #30bae7; }
+@media(max-width: 700px){
+  .footer .link_table .link{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
