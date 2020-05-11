@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./photo_bin/admin_path/logo.ico" type="image/x-icon">
+  <title>LIZA.FOX</title>
+</head>
+<body>
+  <section id="first_block" class="">
+      <div class="text-wrapper-parrent">
+      <div class="text-wrapper-child">
+        <div class="text-wrapper">
+          <h1>
+            Булгакова<br> Елизавета<br> Денисовна
+          </h1>
+          <p class="characteristic-set">
+            <span id="n1">Самая лучшая сестра</span>,
+            <span id="n2">Любимая</span>,<br />
+            <span id="n3">Заботливая</span>,
+            <span id="n4">Весёлая</span>,<br />
+            <span id="n5">FOX</span>
+          </p>
+          <p class="hint" id="hinterHint">Чтобы узнать подробнее про подчеркнутое качество,</p>
+          <script type="text/javascript">
+            // Блок с подсказкой, что можно навестись
+            var hinter = document.getElementById('hinterHint');
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+              // Если пользователь с мобильного устройства
+              hinter.innerHTML += ' выдели его'
+            } else {
+              // Если пользователь с ПК
+              hinter.innerHTML += ' зажми его правой кнопкой мыши';
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+    <img  src="./photo_bin/2019_2.jpg" alt="">
+  </section>
+  <section id="gallery">
+    <h1>
+      Как росла наша девочка
+    </h1>
+    <script src="./js/scripts.js"></script>
+    <div class="slaider">
+      <div class="slaider__button-left" onclick="slide(-1)"><div class="slaider__button__font"><span><</span></div></div>
+      <div class="slaider__photos">
+        <div class="photo" data-position="v" id="photog">
+          <div class="year" id="photoYear"><div id="photoYearText">2007</div></div>
+        </div>
+      </div>
+      <div class="slaider__button-right" onclick="slide(1)"><div class="slaider__button__font"><span>></span></div></div>
+    </div>
+  </section>
+  <section id="upd">
+
+  </section>
+</body>
+</html>
