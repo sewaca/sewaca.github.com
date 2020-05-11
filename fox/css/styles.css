@@ -16,6 +16,8 @@ body{
 }
 #first_block img{
   height: calc(100% - 160px);
+  height: -webkit-calc(100% - 160px);
+  height: -moz-calc(100% - 160px);
   border-radius: 10px;
 }
 .text-wrapper-parrent{display: inline-table; height: 100%; margin: auto;}
