@@ -15,7 +15,7 @@ body{
   overflow: hidden;
 }
 #first_block img{
-  height: 100%;
+  height: calc(100% - 160px);
   border-radius: 10px;
 }
 .text-wrapper-parrent{display: inline-table; height: 100%; margin: auto;}
