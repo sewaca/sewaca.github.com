@@ -52,7 +52,7 @@ body{
 @media(max-width: 799px) {
   #first_block{padding: 15px; height: auto;padding-bottom: 0;}
   .text-wrapper-parrent{display: inline-block; height: auto; margin-bottom: 10px;}
-  #first_block img{height: 430px;}
+  #first_block img{height: 430px; margin: auto;}
 }
 .characteristic-set span::after{
   content: '';
