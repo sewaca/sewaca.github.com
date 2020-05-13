@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  header{position: fixed; width: 100%; top: 0; padding: 20px 0; background: wheat; z-index: 100}
+  body{height: 10000px;margin: 0; background-color: wheat; font-family: sans-serif; color: 	#8A2BE2;}
+  .bold-text{font-weight: bold;}
+  .cursive-text{font-style: italic;}
+  .underline-text{text-decoration: underline;}
+  h1{text-align: center;margin: 0;}
+  .underpage{position: fixed;bottom: 0; width: 100%; text-align: center; color: white; background: black; padding: 20px 0;}
+  #hinter{
+    cursor: pointer;
+    position: relative;
+    height: 20px;
+    background: white;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    width: 200px;
+  }
+  #hinter:hover{border-bottom-left-radius: 0; border-bottom-right-radius: 0;}
+  #hinter:hover::after{
+    position: absolute;
+    top: 40px;
+    display: block;
+    content: 'Веб-страница (англ. Web page) — документ или информационный ресурс Всемирной паутины, доступ к которому осуществляется с помощью веб-браузера.';
+    padding: 20px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    border-top-left-radius:0;
+    border-top-right-radius: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  </style>
+</head>
+<body>
+  <header><h1>Это заготовка моей первой Web-страницы</h1></header>
+  <div style="text-align: center;">
+
+    <p style="margin-top: 30vh;">Именно <span class="cursive-text bold-text">так</span> выглядит моя <span id="hinter" class="underline-text bold-text">ВЕБ-СТРАНИЦА</span></p>
+    <p style="color: darkred">Попробуйте навести курсор на подчеркнутое слово</p>
+    <p style="color: darkred">Попробуйте скроллить страницу</p>
+  </div>
+  <div class="underpage">
+    Булгаков Всеволод Денисович 9В
+  </div>
+</body>
+</html>
