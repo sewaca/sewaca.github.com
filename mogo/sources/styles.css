@@ -694,9 +694,9 @@ header { width: 100%; }
 	display: table-cell;
 }
 /* Фото членов команды */
-#div6 #teammate1{ background-image: url("./img/div6/teammate1.png"); }
-#div6 #teammate2{ background-image: url("./img/div6/teammate2.png"); }
-#div6 #teammate3{ background-image: url("./img/div6/teammate3.png"); }
+#div6 #teammate1{ background-image: url("./img/div6/teammate1.webp"); }
+#div6 #teammate2{ background-image: url("./img/div6/teammate2.webp"); }
+#div6 #teammate3{ background-image: url("./img/div6/teammate3.webp"); }
 /* Таблица с ссылками на тиммэйтов: td{ 26х26 } */
 #div6 .wrapper .teammate .center1{
 	/* Для возможности легко выравнять по вертикали */
