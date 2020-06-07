@@ -271,9 +271,9 @@ header { width: 100%; }
 	display: inline-block;
 }
 /* Ниже указаны пути к фото из галлереи :  */
-#div2 .gallery #p1{ background-image: url("./img/div2-gallery/div2_gallery_photo1.png")}
-#div2 .gallery #p2{ background-image: url("./img/div2-gallery/div2_gallery_photo2.png")}
-#div2 .gallery #p3{ background-image: url("./img/div2-gallery/div2_gallery_photo3.png")}
+#div2 .gallery #p1{ background-image: url("./img/div2-gallery/div2_gallery_photo1.webp")}
+#div2 .gallery #p2{ background-image: url("./img/div2-gallery/div2_gallery_photo2.webp")}
+#div2 .gallery #p3{ background-image: url("./img/div2-gallery/div2_gallery_photo3.webp")}
 /* Адаптивность галлереи */
 @media(max-width: 1249px){
 	#div2 .gallery td{
