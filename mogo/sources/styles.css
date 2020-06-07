@@ -426,7 +426,7 @@ header { width: 100%; }
 /* Div 4 */
 #div4{
 	height: 941px;
-	background-image: url("./img/div4-bg.png");
+	background-image: url("./img/div4-bg.webp");
 	text-align: center;
 	background-position: center;
 	background-repeat: no-repeat;
