@@ -23,7 +23,7 @@ button::-moz-focus-inner {
 	width: 100%; /* Просто для полноэкранного отображения */
 	height: 1000px;
 	overflow: hidden;
-	background-image: url("./img/top-bg.png");
+	background-image: url("./img/top-bg.webp");
 	background-repeat: no-repeat; /* Чтобы фон не повторялся  */
 	background-color: white; /* Если проблемы с картинкой используется цвет */
 }
