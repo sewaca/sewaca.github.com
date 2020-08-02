@@ -201,7 +201,8 @@ header {
   #div1 .progress {
     display: block;
     width: 100%;
-    position: absolute
+    position: relative;
+
   }
 }
 
@@ -276,9 +277,10 @@ header {
   background: linear-gradient(to top, rgba(227, 204, 124, 0.9), rgba(219, 116, 116, 0.9));
   box-shadow: 10px 10px 0 #95e1d3
 }
-
 #div2 .gallery .photo {
-  width: 380px;
+  width: 100%;
+	max-width: 380px;
+	min-width: 200px;
   height: 250px;
   display: inline-block
 }
@@ -621,10 +623,7 @@ header {
 
 @media(max-width: 1199px) {
   #div5 .img {
-    width: 100%;
-    display: block;
-    float: none;
-    margin-bottom: 25px
+    display: none;
   }
 
   #div5 .tabs {
