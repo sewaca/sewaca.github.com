@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+<script>
+window.onload = function(){
+if(screen.width <= 768)
+document.getElementById('frame').setAttribute('src', 'https://www.m.avito.ru/')
+
+}
+</script>
 </head>
-<body>
-  </section>
-  <!--noindex--><iframe src="https://www.avito.ru/nizhniy_tagil/kvartiry/2-k_kvartira_60.9_m_34_et._1677567874" width="100%" height="100%" scrolling="auto"> </iframe><!--/noindex-->
+<body style="margin: 0;overflow: hidden;">
+  <!--noindex--><iframe id="frame" style="width: 100%;border: 0 ;height: 100vh;display: block;" src="https://www.avito.ru/" width="100%" height="100%" scrolling="auto"> </iframe><!--/noindex-->
 </body>
 </html>
