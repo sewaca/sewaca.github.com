@@ -15,15 +15,10 @@ button::-moz-focus-inner {
 }
 
 #div1 {
-  background-position: center;
-  background-size: cover;
   position: relative;
   width: 100%;
 	min-height: 100vh;
   overflow: hidden;
-  /* background-image: url(./img/top-bg.webp);
-  background-repeat: no-repeat; */
-  background-color: #fff
 }
 
 #div1 .container {
