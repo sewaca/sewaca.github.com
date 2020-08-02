@@ -17,7 +17,7 @@ button::-moz-focus-inner {
 #div1 {
   position: relative;
   width: 100%;
-	min-height: 100vh;
+	min-height: 100%;
   overflow: hidden;
 }
 
@@ -78,7 +78,7 @@ header {
   .menu {
     display: block;
     justify-content: center;
-    width: 100vh
+    width: 100%
   }
 
   .menu .logo {
@@ -872,39 +872,39 @@ header {
   }
 
   #div1 {
-    width: 100vh
+    width: 100%
   }
 
   #div2 {
-    width: 100vh
+    width: 100%
   }
 
   .line-between-div2-and-div3 {
-    width: 100vh
+    width: 100%
   }
 
   #div3 {
-    width: 100vh
+    width: 100%
   }
 
   #div4 {
-    width: 100vh
+    width: 100%
   }
 
   #div5 {
-    width: 100vh
+    width: 100%
   }
 
   .line_between_div5_and_div6 {
-    width: 100vh
+    width: 100%
   }
 
   #div6 {
-    width: 100vh
+    width: 100%
   }
 
   .line_with_logos {
-    width: 100vh
+    width: 100%
   }
 }
 
