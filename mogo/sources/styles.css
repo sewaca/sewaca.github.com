@@ -17,7 +17,7 @@ button::-moz-focus-inner {
 #div1 {
   position: relative;
   width: 100%;
-	min-height: 100%;
+	min-height: 100vh;
   overflow: hidden;
 }
 
