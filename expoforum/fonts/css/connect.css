@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Plumb';
+  font-weight: bold;
+  src: url('../Plumb-Bold.woff') format('woff'),
+       url('../plumb_bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Plumb';
+  font-weight: 500;
+  src: url('../plumb-medium.otf') format('otf'),
+       url('../plumb-medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Circe';
+  font-weight: normal;
+	src: url('../circe_light.eot'); /* IE 9 Compatibility Mode */
+	src: url('../circe_light.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../circe_light.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../circe_light.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../circe_light.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../circe_light.svg#circe_light') format('svg'); /* Chrome < 4, Legacy iOS */
+}
