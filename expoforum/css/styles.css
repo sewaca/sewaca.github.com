@@ -116,14 +116,20 @@ span.menu-button{width:27px;height:13px;display:inline-block;font-size:0;transit
   max-height: 80vh;
   height: 100vh;
   box-sizing: border-box;
+  position: relative;
 
   padding-top: 100px;
-
-  background-image: url('../img/bgc.jpg');
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+#first_screen .background{
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: -1;
+  top: 0;
 }
 #first_screen .content{
   width: 100%;
