@@ -28,6 +28,7 @@ body{margin: 0;}
   top: 0;
   left: 0;
   right: 0;
+  transition: .3s;
 }
 .main-header a{
   display: inline-block;
@@ -39,6 +40,9 @@ body{margin: 0;}
   text-decoration: none;
   color: #FFFFFF;
   position: relative;
+}
+.main-header > a{
+  margin-right:0;
 }
 .main-header nav{
   font-size: 0;

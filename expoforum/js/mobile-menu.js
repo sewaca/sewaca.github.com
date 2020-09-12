@@ -14,3 +14,12 @@
       }, 500);
     }
   };
+
+window.onscroll = ()=>{
+  if(window.pageYOffset > 5){
+    document.querySelector('.main-header').style.backgroundColor = 'rgba(0,0,0,0.5)';
+  }
+  else {
+    document.querySelector('.main-header').style.backgroundColor = '';
+  }
+}
