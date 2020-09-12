@@ -3,12 +3,15 @@
   font-weight: bold;
   src: url('../Plumb-Bold.woff') format('woff'),
        url('../plumb_bold.ttf') format('truetype');
+font-display: swap;
+
 }
 @font-face {
   font-family: 'Plumb';
   font-weight: 500;
   src: url('../plumb-medium.otf') format('otf'),
        url('../plumb-medium.ttf') format('truetype');
+font-display: swap;
 }
 @font-face {
 	font-family: 'Circe';
@@ -19,4 +22,5 @@
 		url('../circe_light.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
 		url('../circe_light.ttf') format('truetype'), /* Safari, Android, iOS */
 		url('../circe_light.svg#circe_light') format('svg'); /* Chrome < 4, Legacy iOS */
+font-display: swap;
 }
