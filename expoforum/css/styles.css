@@ -22,7 +22,7 @@ body{margin: 0;}
   color: white;
   font-family: Circe;
 
-  background-color: rgba(0,0,0,0.7);
+  z-index: 1000;
 
   position: fixed;
   top: 0;
@@ -120,6 +120,7 @@ span.menu-button{width:27px;height:13px;display:inline-block;font-size:0;transit
 
   padding-top: 100px;
   overflow: hidden;
+  background-color: rgba(0,0,0,0.3);
 }
 #first_screen .background{
   position: absolute;
