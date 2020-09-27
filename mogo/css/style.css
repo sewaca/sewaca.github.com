@@ -137,6 +137,8 @@ article:hover .foreground{opacity:1}
 #ourteam .teamate h2,#ourteam .teamate h2 div{display:flex;justify-content:center}
 #ourteam .teamate h2 div{width:50px;height:50px;background-color:#fce38a;border-left:1px solid #f38181}
 #ourteam .teamate h2 div:first-child{background-color:#f38181;border-left:0}
+svg {transition: 0s;}
+svg *:not(path){transition: 0s;}
 .facebook svg{width:12px;height:25.6px;fill:#fff;transition:0}
 .twitter svg{width:25px;height:20px;fill:#f38181;transition:0}
 .pinterest svg{width:20px;height:25.6px;fill:#f38181;transition:0}
