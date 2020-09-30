@@ -158,7 +158,7 @@ svg *:not(path){transition: 0s;}
 }
 
 #gallery .more-description{margin:45px 0 100px}
-#gallery .galleryblock{display:flex;justify-content:center;flex-wrap:wrap}
+#gallery .galleryblock{display:flex;justify-content:center;flex-wrap:wrap;min-height: 100vh;}
 #gallery .galleryblock > div{flex:1;min-width:200px}
 #gallery .double{overflow:hidden;display:flex;flex-direction:column}
 #gallery .double article{height:50%}
