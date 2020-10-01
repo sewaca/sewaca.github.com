@@ -5,13 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Ghost Busters</title>
-  <link rel="stylesheet" href="./css/normalize.css">
-  <link rel="stylesheet" href="./css/animate.css">
+
+  <link rel="preload" as="style" href="./css/normalize.css">
+  <link rel="preload" as="style" href="./css/slick.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="preload" as="style">
+  <link rel="preload" href="./css/animate.css" as="style">
+  <link rel="preload" href="./css/animate.css" as="style">
+
+  <script type="text/javascript" defer>
+    document.querySelectorAll('link[rel="preload"][as="style"]').forEach((item, i) => {
+      item.onload = item.setAttribute('rel', 'stylesheet');
+    });
+  </script>
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/animate.css" media="screen">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/slick.css">
+  </noscript>
+
+  <!-- Not add lazyload per styles.css to avoid CLS increases -->
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/slick.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-  <script src="./js/jquery-3.5.1.min.js"></script>
-  <script src="./js/wow.min.js"></script>
+  <script src="./js/jquery-3.5.1.min.js" async></script>
+  <script src="./js/wow.min.js" async></script>
 </head>
 <body onload="render_menu()">
 
@@ -57,7 +73,7 @@
   <!-- Блок с трейлером -->
   <div class="modal-with-treiler">
     <div class="content">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/w3ugHP-yZXw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/w3ugHP-yZXw" frameborder="0" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <div class="close-modal__button"><p>+</p></div>
     </div>
   </div>
@@ -73,7 +89,7 @@
         </footer>
       </div>
       <!-- Скрипт отвечающий за показывание трейлера -->
-      <script src="./js/show_trailer.js"></script>
+      <script src="./js/show_trailer.js" defer></script>
       <!-- -->
       <div class="film-info wow fadeInRight">
         <h2>Охотники за привидениями: Наследники</h2>
@@ -202,9 +218,7 @@
       <div class="content-wrapper creators-content">
         Нет инфорамции о создателях
       </div>
-      <script src="./js/switcher.js">
-
-      </script>
+      <script src="./js/switcher.js" defer></script>
     </div>
   </section>
   <!-- Новости -->
@@ -252,7 +266,7 @@
           <img src="./img/arrow.svg" alt="">
         </div>
       </div>
-      <script src="./js/slick.min.js"></script>
+      <script src="./js/slick.min.js" defer></script>
     </div>
   </section>
   <script> new WOW().init(); </script>
