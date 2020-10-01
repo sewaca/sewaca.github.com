@@ -1,14 +1,1 @@
-@font-face {
-    font-family: 'Aileron';
-    src: local('Aileron regular'), local('Aileron-regular'), url('./aileron/regular/Aileron.woff2') format('woff2'), url('./aileron/regular/Aileron.woff') format('woff'), url('./aileron/regular/Aileron.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Aileron';
-    src: local('Aileron Bold'), local('Aileron-Bold'), url('./aileron/bold/Aileronbold.woff2') format('woff2'), url('./aileron/bold/Aileronbold.woff') format('woff'), url('./aileron/bold/Aileronbold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
+@font-face{font-family:'Aileron';src:local('Aileron regular'),local(Aileron-regular),url(./aileron/regular/Aileron.woff2) format("woff2"),url(./aileron/regular/Aileron.woff) format("woff"),url(./aileron/regular/Aileron.ttf) format("truetype");font-weight:600;font-style:normal;font-display:swap}@font-face{font-family:'Aileron';src:local('Aileron Bold'),local(Aileron-Bold),url(./aileron/bold/Aileronbold.woff2) format("woff2"),url(./aileron/bold/Aileronbold.woff) format("woff"),url(./aileron/bold/Aileronbold.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}
