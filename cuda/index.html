@@ -9,8 +9,6 @@
   <title>CUDA</title>
   <!-- Подключение шрифтов -->
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,400i,700&display=swap" rel="preload" as="style">
-  <!-- Подключаем стили к сайту -->
-  <link rel="preload" as="style" href="./sources/styles.css">
   <script type="text/javascript" defer="">
     document.querySelectorAll('link[rel="preload"][as="style"]').forEach((item, i) => {
       item.onload = item.setAttribute('rel', 'stylesheet');
@@ -19,8 +17,9 @@
 
   <noscript>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,400i,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./sources/styles.css">
   </noscript>
+  <!-- Подключаем стили к сайту -->
+  <link rel="stylesheet" href="./sources/styles.css">
   <!-- Подключаем нужные .js файлы -->
   <script src="./sources/js/gallery.js"></script>
 </head>
