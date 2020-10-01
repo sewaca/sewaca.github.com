@@ -2,6 +2,7 @@ body{
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding-top: 105px;
+  overflow-x: hidden;
 }
 .mobile{
   display: none;
@@ -12,7 +13,8 @@ body{
   width: 100%;
   border-bottom: 1px solid #D4D4D4;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.95)
+  background-color: rgba(255, 255, 255, 0.95);
+  /* animation-duration: .5s; */
 }
 .main-header .wrapper{
   width: 100%;
@@ -391,6 +393,7 @@ nav a:last-child{
 #persons{
   padding: 70px 0 100px 0;
   border-top: 1px solid #D4D4D4;
+  overflow: hidden;
 }
 #persons .wrapper{
   width: 80%;
@@ -524,7 +527,6 @@ nav a:last-child{
 }
 #news .content-grid .element{
   min-height: 160px;
-  min-width: 260px;
   width: 23%;
 
   box-sizing: border-box;
@@ -532,6 +534,8 @@ nav a:last-child{
 
   padding: 30px;
   padding-bottom: 0;
+
+  margin: 0 15px;
 }
 #news .element .post-date{
   font-family: Roboto;
@@ -568,6 +572,15 @@ nav a:last-child{
 @media (max-width: 320px) {
   #news .wrapper{width: 90%}
   #news .content-grid .element{min-width: 220px;padding: 20px;padding-bottom: 0;}
+}
+.newsGrid-Content{
+  width: calc(100% - 100px);
+  cursor: grab;
+}
+.slick-arrow{cursor: pointer;}
+.slick-arrow.slick-disabled{
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 /* Добавим анимацию  */
 .fadeOutLeft{-webkit-animation-name:fadeOutLeft;animation-name:fadeOutLeft;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes fadeOutLeft{0%{opacity:1}100%{opacity:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}}@keyframes fadeOutLeft{0%{opacity:1}100%{opacity:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0);display:none;visibility:hidden}}.fadeOutRight{-webkit-animation-name:fadeOutRight;animation-name:fadeOutRight;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes fadeOutRight{0%{opacity:1}100%{opacity:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}}@keyframes fadeOutRight{0%{opacity:1}100%{opacity:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}}.fadeInRight{-webkit-animation-name:fadeInRight;animation-name:fadeInRight;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes fadeInRight{0%{opacity:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInRight{0%{opacity:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}.fadeInLeft{-webkit-animation-name:fadeInLeft;animation-name:fadeInLeft;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes fadeInLeft{0%{opacity:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInLeft{0%{opacity:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
