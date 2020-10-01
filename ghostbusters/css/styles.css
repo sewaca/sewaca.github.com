@@ -103,9 +103,10 @@ nav a:last-child{
   padding-right: 28px;
 }
 .overscreen-mobile-menu{display: none;}
+.overscreen-mobile-menu.opened{display: block;}
 .overscreen-mobile-menu .wrapper{
   width: 100%;
-  height: calc(100% - 105px);
+  height: calc(100vh - 105px);
   z-index: 10;
   background-color: #5671F6;
   display: flex !important;
@@ -214,6 +215,7 @@ nav a:last-child{
 
 #about-film{
   padding: 80px 0;
+  overflow: hidden;
 }
 #about-film .wrapper{
   display: flex;
