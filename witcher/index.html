@@ -4,22 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./css/masonchronicles.css"> <!-- Mason Chronicles -->
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/swiper.min.css">
   <link rel="icon" href="./img/logo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="style" href="./css/masonchronicles.css"> <!-- Mason Chronicles -->
+  <link rel="preload" as="style" href="./css/reset.css">
+  <link rel="preload" as="style" href="./css/swiper.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="preload" as="style">
+  <script type="text/javascript" defer>document.querySelectorAll('link[rel="preload"][as="style"]').forEach((item, i) => {item.onload = item.setAttribute('rel', 'stylesheet');});</script>
+  <noscript>
+    <link rel="stylesheet" href="./css/masonchronicles.css"> <!-- Mason Chronicles -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  </noscript>
+
+  <link rel="stylesheet" href="./css/styles.css">
   <title>Witcher</title>
   <script defer src="./js/jquery-3.5.1.min.js"></script>
   <script defer src="./js/swiper.min.js"></script>
   <script defer src="./js/main.js"></script>
+  <script defer src="./js/lazysizes.min.js"></script>
 </head>
 <body>
   <div class="trailer">
     <div class="wrapper">
       <div class="trailer-content">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Bw6XSzDTeTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" class="lazyload" data-src="https://www.youtube.com/embed/Bw6XSzDTeTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="close-trailer-button">
           <span class="menu-button active">
             <span class="e1"></span>
@@ -31,8 +41,9 @@
     </div>
   </div>
   <section class="main">
+    <img class="lazyload" data-src="./img/background.jpg" alt="">
     <header class="page-header">
-      <img src="./img/logo.webp" alt="" class="logo desctop">
+      <img data-src="./img/logo.png" alt="" class="logo desctop lazyload">
       <div class="links desctop">
         <a href="#">Описание</a>
         <a href="#">Трейлер</a>
@@ -52,7 +63,7 @@
       </div>
     </header>
     <div class="mobile-menu">
-      <img src="./img/logo.webp" alt="" class="logo desctop">
+      <img data-src="./img/logo.png" alt="" class="logo desctop lazyload">
       <div class="social">
         <a href=""><img src="./img/twitter.svg" alt=""></a>
         <a href=""><img src="./img/instagram.svg" alt=""></a>
