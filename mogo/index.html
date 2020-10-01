@@ -8,7 +8,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&family=Roboto:ital,wght@0,400;1,300&display=swap" rel="preload" as="style">
-  <link rel="preload" href="./css/style.css" as="style">
   <link rel="preload" href="./css/slick.css" as="style">
 
   <script type="text/javascript" defer>
@@ -19,10 +18,11 @@
 
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css" media="screen">
     <link rel="stylesheet" href="./css/slick.css" media="screen">
   </noscript>
 
+  <!-- Please, don't use preload per style.css, bacause LCP become too much -->
+  <link rel="stylesheet" href="./css/style.css" media="screen">
   <title>MoGo</title>
   <script>
     window.onload = () => {
