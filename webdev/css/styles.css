@@ -17,12 +17,10 @@ h1{font-weight:700;font-size:30px;text-align:center}
 .page-nav{display:none}
 .mobile-menu{display:block}
 }
-.div1::before{content: ''; position: absolute;top:-5px;left: -5px;bottom: -5px;right: -5px;background-color: rgba(0,0,0,0.8);z-index: -3;}
-.div1{position: relative;overflow:hidden;min-height:80vh;width:100%;color:#fff;text-align:center;font-family:Mariad Pro;padding-top:80px;padding-bottom:80px;display:flex;-ms-align-items:center;align-items:center;justify-content:space-around}
-.div1 > img{position: absolute;min-width: 100%; min-height: 100%;top: 0; left: 50%;-webkit-transform: translateX(-50%);;
--ms-transform: translateX(-50%);;
-transform: translateX(-50%);;z-index: -1;}
-.div1 .container{display:inline-block;}
+.div1::before{content:'';position:absolute;top:-5px;left:-5px;bottom:-5px;right:-5px;background-color:rgba(0,0,0,0.8);z-index:-3}
+.div1{position:relative;overflow:hidden;min-height:80vh;width:100%;color:#fff;text-align:center;font-family:Mariad Pro;padding-top:80px;padding-bottom:80px;display:flex;-ms-align-items:center;align-items:center;justify-content:space-around}
+.div1 > img{position:absolute;min-width:100%;min-height:100%;top:0;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);z-index:-1}
+.div1 .container{display:inline-block}
 .div1 h1{font-size:60px;font-weight:700;font-family:'Open Sans';margin-bottom:108px}
 .div1 span{font-size:24px;font-weight:400;display:block;margin-top:28px}
 .div1 button{color:#fff;font-size:18pt;font-family:Myriad Pro;background-color:#00897b;border:2px solid #00897b;padding:27px 38px}
