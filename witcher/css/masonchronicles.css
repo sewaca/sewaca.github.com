@@ -8,4 +8,5 @@
 		url('./fonts/masonchronicles.svg#masonchronicles') format('svg'); /* Chrome < 4, Legacy iOS */
 
 	font-weight: 500;
+	font-display: swap;
 }
