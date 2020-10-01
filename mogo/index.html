@@ -9,7 +9,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&family=Roboto:ital,wght@0,400;1,300&display=swap" rel="preload" as="style">
   <link rel="preload" href="./css/slick.css" as="style">
-  <script type="text/javascript" defer>
+  <script defer type="text/javascript">
     document.querySelectorAll('link[rel="preload"][as="style"]').forEach((item, i) => {
       item.onload = item.setAttribute('rel', 'stylesheet');
     });
@@ -23,12 +23,11 @@
   <!-- Please, don't use preload per style.css, bacause LCP become too much -->
   <link rel="stylesheet" href="./css/style.css" media="screen">
   <title>MoGo</title>
-  <script>
+  <script defer>
     window.onload = () => {
       document.body.classList.remove('load');
     }
   </script>
-  <script defer src="./js/paralax.js"></script>
 </head>
 
 <body class="load">
@@ -621,9 +620,10 @@
     </div>
   </footer>
 
-  <script src="./js/slickJQ.js" defer></script>
-  <script src="./js/main.js" defer></script>
-  <script src="./js/lazysizes.min.js" async></script>
+  <script defer src="./js/paralax.js"></script>
+  <script defer src="./js/slickJQ.js"></script>
+  <script defer src="./js/main.js"></script>
+  <script defer src="./js/lazysizes.min.js"></script>
 </body>
 
 </html>
