@@ -139,7 +139,7 @@ article:hover .foreground{opacity:1}
 #ourteam .teammates{display:flex;flex-wrap:wrap;justify-content:space-around}
 #ourteam .teamate{position:relative;min-width:300px;flex:1;margin:0 10px;overflow:hidden;margin-top:20px; max-width: 383px;}
 #ourteam .teamate:hover{transform:translate(-10px,-10px);box-shadow:10px 10px 0 0 #95e1d3}
-#ourteam .teamate img{transform:translateX(-10%);position:relative;height:100%}
+#ourteam .teamate img{position:relative;min-width: 100%;min-height:100%}
 #ourteam .teamate svg{display:block;position:relative;top:50%;transform:translateY(-50%)}
 #ourteam .teamate .foreground{flex-wrap:nowrap}
 #ourteam .teamate h2,#ourteam .teamate h2 div{display:flex;justify-content:center}
