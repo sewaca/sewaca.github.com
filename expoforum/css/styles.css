@@ -86,7 +86,7 @@ span.arrow .e3{width:50%;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-
 #side-menu .coloumn a:hover{color:#FFC41E;text-decoration:underline}
 #events{background:#FFC41E;padding:70px 0}
 #events .controls{display:flex;width:100%;justify-content:space-between;align-items:center;margin-bottom:55px;flex-wrap:wrap}
-#events h1{font-family:Plumb;font-style:normal;font-weight:500;font-size:30px;line-height:130%;letter-spacing:-.01em;color:#2E373B;margin:0}
+#events h1, #news h1{font-family:Plumb;font-style:normal;font-weight:500;font-size:30px;line-height:130%;letter-spacing:-.01em;color:#2E373B;margin:0}
 #events .controls a{font-family:Plumb;font-style:normal;font-weight:500;font-size:21px;line-height:130%;letter-spacing:-.01em;text-decoration:none;color:#2E373B}
 #events .controls a span.arrow span{background-color:#2E373B}
 #events .events-table{display:flex;justify-content:space-around;flex-wrap:wrap}
