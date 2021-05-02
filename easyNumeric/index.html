@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="preview">
+    <h2>PREVIEW</h2>
+    <div class="inputs">
+      <input type="number" step="5" min="-50" max="50" placeholder="input something" class="a b c d e">
+      <input type="number" step="5" min="-50" value="1324" max="50" readonly class="a b c d">
+      <input type="number" step="5" min="-50" value="1324" max="50" class="a b c">
+      <input type="number" step="5" min="-50" class="a b">
+      <input type="number" step="5" class="a">
+      <input type="number">
+      <input type="number" class="notSNumeric">
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    var snumeric = new SNumeric( {
+      ignore : 'notSNumeric',
+      oninput: function(  ){  },
+      onblur : function(  ){  },
+      onfocus: function(  ){  },
+      onclick: function(  ){  },
+      placeholder: undefined,
+    } );
+  </script>
+</body>
+</html>
