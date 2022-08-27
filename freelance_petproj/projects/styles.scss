@@ -1,0 +1,17 @@
+@import "../all.scss";
+
+@import "../header.scss";
+
+.layout {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  max-width: 1400px;
+  margin: 0;
+  background-color: unset;
+}
+
+@import "./projects.scss";
+
+
+@import "../pagination.scss";

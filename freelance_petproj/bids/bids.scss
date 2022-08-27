@@ -1,0 +1,132 @@
+.bidsList{
+  display: flex;
+  flex-direction: column;
+
+}
+.bid{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px 25px 30px;
+  border-radius: 6px;
+  position: relative;
+  &:not(.last)::after{
+    content: "";
+    position: absolute;
+    width: 65%;
+    bottom: 0;
+    left: 17.5%;
+    right: 17.5%;
+    height: 1px;
+    display: block;
+    background-color: #C7C7C7;
+  }
+  @media(max-width: 730px){
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+}
+@media(min-width: 730px){
+  .mobile{display: none!important;}
+}
+@media(max-width: 730px){
+  .workdata.desktop{
+    display: none;
+  }
+  .mobile{
+    display: flex;
+  }
+}
+.projectTitle{
+  overflow: hidden;
+  max-width: 800px;
+  margin-bottom: 15px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  font-size: 24px;
+
+  @media(max-width: 1200px){
+    max-width: 600px;
+  }
+  @media(max-width: 1000px){
+    max-width: 500px;
+  }
+  @media(max-width: 850px){
+    font-size: 20px;
+    max-width: 400px;
+  }
+  @media(max-width: 730px){
+    font-size: 18px;
+    max-width: 80vw;
+    margin-bottom: 10px;
+  }
+}
+.customerData{
+  display: flex;
+  align-items: center;
+  margin-bottom: 11px;
+  @media(max-width: 730px){
+    justify-content: center;
+    margin-top: 10px;
+  }
+  img{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: block;
+    margin-right: 12px;
+  }
+  span{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #545454;
+  }
+}
+.publishedAt{
+  color: $grayText;
+  font-weight: 300;
+}
+.workdata{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media(max-width: 730px){
+    margin-top: 10px;
+  }
+  @media(min-width: 769px){
+    flex-direction: column;
+    .price{
+      margin: 0 0 15px 0;
+
+    }
+  }
+}
+
+.price, .days{
+  display: block;
+  padding: 10px;
+  width:100%;
+  white-space: nowrap;
+  border-radius: 6px;
+  text-align: center;
+  min-width: 120px;
+  @media(max-width: 730px){
+    min-width: 110px;
+    width: 110px;
+  }
+}
+
+.price{
+  background-color: $blue;
+  color: #fff;
+  margin-right: 10px;
+}
+.days{
+  background-color: #EAEAEA;
+  color: #000;
+}

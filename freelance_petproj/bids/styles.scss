@@ -1,0 +1,32 @@
+@import "../all.scss";
+
+@import "../header.scss";
+
+
+.pageHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  padding: 0 30px;
+  @media(max-width: 620px){
+    flex-direction: column;
+    h2{
+      margin-bottom: 6px;
+    }
+    select{
+      width: 100%;
+    }
+  }
+  h2{
+    font-weight: 500;
+    font-size: 20px;
+  }
+  
+}
+
+
+
+@import "./bids.scss";
+
+@import "../pagination.scss";

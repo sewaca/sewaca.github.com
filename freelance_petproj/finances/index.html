@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="siteHeader">HEADER</header>
+  <main class="layout">
+    <header class="pageHeader">
+      <h2>Ваши финансы</h2>
+    </header>
+    <div class="balanceInfo">
+      <div class="avaliableBlock">
+        <span>Доступно к выводу: </span>
+        <div class="avaliable">400 000 ₽</div>
+      </div>
+      <div class="inProccessBlock">
+        <span class="inProccess_span">В работе:</span>
+        <div class="inProccess">50 000 ₽</div>
+      </div>
+    </div>
+    <form class="payout">
+      <span>Вывести на карту : </span>
+      <select>
+        <option selected value="Основная">Основная</option>
+        <option value="Зарплатная">Зарплатная</option>
+        <option value="3 карта">3 карта</option>
+      </select>
+      <input type="number" placeholder="Сумма">
+      <button type="submit">
+        Вывести
+      </button>
+    </form>
+    <div class="cardshint">
+      <p>Добавить карту можно в <a href="#settings-cards">настройках</a></p>
+    </div>
+
+
+    <script>
+      window.addEventListener('load', () => {
+        document.querySelectorAll('.tabs .controls button').forEach(button => {
+          button.addEventListener('click', () => {
+            document.querySelectorAll(".tabs .active").forEach(a => a.classList.remove("active"))
+            button.classList.add("active")
+            document.querySelector('.tabs .content .tab#' + button.dataset.tabid).classList.add("active")
+          })
+        })
+      })
+    </script>
+
+    <section class="tabs">
+      <div class="controls">
+        <button data-tabid="stats" class="active">Статистика</button>
+        <button data-tabid="history">История операций</button>
+      </div>
+      <div class="content">
+        <div class="tab active" id="stats">
+          <svg width="604" style="max-width: 100%;" height="318" viewBox="0 0 604 318" fill="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M0 0H604V318H0V0Z" fill="url(#pattern0)" />
+            <defs>
+              <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_66_256" transform="scale(0.00165563 0.00314465)" />
+              </pattern>
+              <image id="image0_66_256" width="604" height="318"
+                xlink:href="data:image/png;base64,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uOACn37s2LFDs2bN0uzZs3XixInAB+MUx44dU1VVlS688MImZRdeeKFcLpeOHz/u3fab3/xGiYmJys7OVlRUlN+2G/8o69atW5Mp66qqKlVVVWnmzJnq2bOnEhMT9eCDD2rt2rXe0PnII4/owgsvVJ8+ffTQQw/5vBahUFdX551Wb3yc7IknntCBAwf0xhtvaPny5frXv/6l3//+92dc0OzSpYvOPfdc7x8upwpk7eOJEyd0zz336KmnnvLu19wHiUsRFEpDfk8NwBlhxowZ5r777muy/fjx46Zv375m/fr13imb3r17m+TkZNO/f3+zbNkyY4z/qT+Px2Ouvvpq86tf/cpne21trVm0aJG59tprTf/+/U1mZqbZsWOHT51QTBPt27fP9O/f3+Tl5Zldu3aZkpIS89xzz5nevXub999/3xhjzNSpU83EiRNNWVmZ+eKLL8yECRPMzJkzg5pSNMaYOXPmmIyMDO/U8cn7zJo1y9xxxx3ms88+M4cOHTJ33HGHyc3N9U5/3nnnnaasrMzs2rXLDB8+3Dz11FM+x6itrTUbNmwwvXv3/kZTLfX19aZ///5mz549Tcr27NljBg4caOrr673HvvLKK83Ro0dP29bpxmDZsmXmqquu8pmOKi8vN0eOHDEOh8O43W5v3b1795p+/fqZysrKJmWffvqpSUlJaTLlnZqaav7yl78Eff7NaW4qrbH/Ho/HpKSkNJkW/uEPf9iuppNbEsh1vmjRIvOTn/zElJWVmf3795vMzEwzb948b93a2lozceJEk5uba+rr640xDVPuKSkpZvr06aaiosKsXbvWOBwO43Q6jcfjMf379zd33323OXDggPn888/N6NGjzfz5801tba1xOBwmKyvLlJaWmp07d5phw4aZxYsXWxkjAheAiFNfX2+GDRtm1q1bF+6uNGv79u0mKyvLpKammssvv9yMGzfO/OMf//CWHz9+3Dz88MNm0KBB5oorrjBTp041lZWVQQWuV155xdx4440+4eTkfSorK81jjz1mhgwZYq688kozbdo0U1lZaSoqKozD4TDLli0z1157rRk4cKCZPXu2cbvdPmE4KSnJpKamesPwN3HvvfeaefPmNdmek5NjJk2a5HN+Tz/9tBk1apQ5duxYk/qnG6e6ujrz85//3Pz617/2rs1qDCyXXXaZ+eSTT7x1N23aZK677jpvKDk5eBQXF5u0tLSQrYdsaQ1X4+t0amBMSUkxxrTfoHmy6upq43A4fK7h073GLa19/OUvf2nmzp3rDVvGNFwXe/bs8a7Z27x5c0SG0pi2vV8GAN9MTU2NNm7cqGPHjgU0NRsuKSkpWrp0abPlXbp0UW5ubpPtcXFxTaYRT33eq1cvnzZ4WQ8AAAPqSURBVG3jx4/X+PHjm90nLi5Os2fP1uzZs33qNH6QbkZGhjIyMvweo61MmzZNY8eO1be+9S3vu1dXrVqlv/3tb1q9erVP3fvvv19ut1sTJkzQyy+/rM6dO/tte968eXI6nXruued01llfr4g566yzdOutt+qxxx7TggUL1KlTJz377LO66aabvFN3c+fO1YIFC+RyubRgwQKftYFSeNdDdu3aVWeffba++OILJScnS5I+//xz9ezZU1LDdHJxcbE6deqkp59+Wr1795bkO53cr18/SaefTm58Z/DpppNra2u1du1aPfzwwxo7dqy16flDhw4pOjra7+dKnrz28WQnTz2+//77Ki4u9pmCbvwg8RkzZujYsWM+7w5vizWOUsNYP/TQQ9/om19YwwUgojz//PN67LHHNH/+/JCuzToTheNNJUlJSXr99de1e/du/fSnP9Udd9yhnTt3qqCgQBdddJFP3aioKD388MMaMGCA7rnnHp9vWjjVq6++qo0bN2rJkiWnvS6mTZvmXRM5bNgwXXrppZoyZYo3eNx88826/fbblZGRoauuuspnfWS410OeddZZGjVqlHJycnTo0CF98cUXWrRokTcUNgbNvLy8ZoPm559/rsOHD582aJaXl2v37t1hDZqbNm1S3759/a7VC2Tt41133aW77rrLZy2gvw8Sj6Q1jkwpAsAZ6vjx42b+/Pnh7kZYHT58OCzrlU4WyMdCHD9+3GRnZ5vU1FRz9dVXmyeeeMK43e52NZ3cnF27dpmrr77aPPPMM+bYsWPex65du5q8Ni2tfayvrzdPPvmkufXWW43T6fSOQXJystmyZYupq6szzz77rHE4HObTTz81xkTOGscoY86wj/gGAOD/HTx4UNdcc42V6dNIduTIEV111VVhP+9A3+m3adMm9erVS06nUzk5OdqwYYPq6ur04x//WHPmzNHx48f1/e9/XyUlJTLGaO7cufr444/10ksvKS4uTkuXLtVzzz2nc889V3feeae2bNmi3bt3a926daqqqlJeXp7eeustud1uDRs2TLNmzVJNTY0GDRqknJwcPf/886qqqtKoUaP0yCOP6OjRo/r+97+v6Oho1dfXq1u3bvrtb3/bZGq+NQhcAIAzltPp1JIlS5SdnR3uroRUpATNpKQkb5j6JnVsCHUoZQ0XAOCM1aVLlw4XtqSG9VD33XdfuLshh8PR4gdbB1LHhlCvceQOFwAA6HBCffeTwAUAAGAZU4oAAACWEbgAAAAsI3ABAABYRuACAACwjMAFAABgGYELAADAMgIXAACAZQQuAAAAywhcAAAAlhG4AAAALCNwAQAAWPZ/qptxXSPdDQEAAAAASUVORK5CYII=" />
+            </defs>
+          </svg>
+        </div>
+        <div class="tab" id="history">
+          <table>
+            <thead>
+              <tr>
+                <td>Дата операции</td>
+                <td>Описание</td>
+                <td>Сумма</td>
+              </tr>
+            </thead>
+            <tr class="decrease">
+              <td class="date">24 августа 2022, 21:20</td>
+              <td class="description">Вывод средств на карту <b>основная</b> (5559 49** **** 4013)</td>
+              <td class="sum">-1000 RUB</td>
+            </tr>
+            <tr class="decrease">
+              <td class="date">24 августа 2022, 21:20</td>
+              <td class="description">Вывод средств на карту <b>основная</b> (5559 49** **** 4013)</td>
+              <td class="sum">-1000 RUB</td>
+            </tr>
+            <tr class="increase">
+              <td class="date">24 августа 2022, 21:20</td>
+              <td class="description">Оплата проекта <a href="#project-link">cоздать продающий лендинг</a></td>
+              <td class="sum">+2000 RUB</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
