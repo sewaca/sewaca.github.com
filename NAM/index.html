@@ -144,7 +144,7 @@
         </div>
       </div>
     </div>
-
+  
     <script>
       // state:
       var IS_STOPPED = true;
@@ -185,7 +185,7 @@
         playback_state = a;
         document
           .querySelector("#btn-stop")
-          .setAttribute("fill", playback_state !== undefined ? "red" : "gray");
+          .setAttribute("fill", a ? "red" : "gray");
         
         if (!a) setCurrentState(undefined);
       }
@@ -197,8 +197,6 @@
       // Actioners
       var highlighted = undefined;
       function highlightState(i) {
-        console.log(i, document.querySelector("#commandList").children[i]);
-
         if (highlighted !== undefined)
           document.querySelector("#commandList").children[
             highlighted
@@ -216,6 +214,7 @@
       // Handlers
       function playPressed() {
         if (current_state !== undefined) return;
+        setPlaybackState(true);
         setCurrentState(document.querySelector("#original_text").value);
         makeStep();
       }
@@ -255,11 +254,9 @@
         handle: '.glyphicon-move',
         swapThreshold: 1,
         removeOnSpill: true,
-
         onStart: function (evt) {
           evt.item.classList.add("bg-secondary");
         },
-
         onEnd: function (evt) {
           [rules[evt.oldIndex], rules[evt.newIndex]] = [rules[evt.newIndex], rules[evt.oldIndex]];
           evt.item.classList.remove("bg-secondary");
