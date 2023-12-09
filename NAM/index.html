@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://markov.quanuhs.repl.co/ -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Markov Algorithm</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="./assets/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+
+    <!-- Latest Sortable -->
+    <script src="./assets/Sortable.min.js"></script>
+    <style>
+      .glyphicon-move {
+        cursor: move;
+        cursor: -webkit-grabbing;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mb-5 pt-5">
+      <input
+        type="text"
+        class="form-control overflow-auto text-center my-1"
+        readonly=""
+        id="showcase"
+      />
+      <div class="input-group mb-3 shadow" id="input-area">
+        <div class="input-group-prepend">
+          <a class="btn btn-danger" onclick="clearField()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-trash"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <input
+          type="text"
+          class="form-control overflow-auto text-center"
+          id="original_text"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="my-2 mb-3 card shadow">
+        <div class="d-flex justify-content-center pb-2 card-body">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40px"
+            height="40px"
+            fill="grey"
+            class="bi bi-stop-circle shadow rounded-circle mx-2"
+            id="btn-stop"
+            onclick="setTimeout(stopPressed, 90)"
+            viewBox="0 0 16 16"
+          >
+            <!-- <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/> -->
+            <path
+              d="M5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3z"
+            ></path>
+          </svg>
+
+          <!-- <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="btn-pause"
+            width="40px"
+            height="40px"
+            fill="currentColor"
+            class="bi bi-pause-circle shadow rounded-circle mx-2 d-none"
+            onclick="setTimeout(pausePressed, 50)"
+            viewBox="0 0 16 16"
+          >
+           <path
+              d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z"
+            ></path>
+          </svg> -->
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40px"
+            height="40px"
+            fill="green"
+            class="bi bi-play-circle shadow rounded-circle mx-2"
+            id="btn-play"
+            viewBox="0 0 16 16"
+            onclick="IS_STOPPED=false; playPressed()"
+          >
+            <!-- <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/> -->
+            <path
+              d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"
+            ></path>
+          </svg>
+        </div>
+        <div class="d-flex justify-content-center">
+          <input
+            id="speed-limit"
+            type="range"
+            class="form-control-range slider mx-2"
+            min="5"
+            max="500"
+            step="5"
+            value="200"
+            style="width: 250px"
+            oninput="document.getElementById('speed-limit-text').innerText = this.value"
+          />
+          <h6 id="speed-limit-text" class="mx-2" style="width: 30px">50</h6>
+        </div>
+      </div>
+      <!-- Simple List -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-body">
+          <button
+            id="add_line"
+            class="add_line btn form-control btn-positive"
+            onclick="add_data_line()"
+          >
+            Add condition
+          </button>
+          <div
+            id="commandList"
+            class="col my-2 gap-2"
+            style="max-height: 300px; overflow-y: auto"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // state:
+      var IS_STOPPED = true;
+
+      const rules = [];
+      add_data_line();
+
+      const getTimeout = () =>
+        Number(document.querySelector("#speed-limit").value);
+      function add_data_line(arr1 = "", opt = "0", arr2 = "") {
+        IS_STOPPED = true;
+        rules.push(["", "0", ""]);
+
+        // (e)=>(rules[${
+        //     rules.length - 1 }][0] = e.target.value)
+
+        const container = document.createElement("div");
+        container.classList.value = "col p-2 command";
+        container.innerHTML = `<div class="input-group">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-grip-vertical glyphicon-move align-self-center" viewBox="0 0 16 16"><path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></svg>
+          <input type="text" class="form-control text-center command-belong" oninput="rules[${rules.length - 1}][0] = this.value">
+          <div class="input-group-prepend">
+            <select class="form-select command-belong" 
+              onchange="rules[${rules.length - 1}][1] = this.value">
+              <option selected="" value="0">➜</option>
+              <option value="1" class="text-danger">|➜</option>
+            </select> 
+          </div>
+          <input type="text" class="form-control text-center command-belong" oninput="rules[${rules.length - 1}][2] = this.value">  </div>`;
+
+        document.querySelector("#commandList").appendChild(container);
+      }
+
+      var playback_state = false; // запущенна ли
+      var current_state = undefined;
+      // SETTERS & GETTERS
+      function setPlaybackState(a) {
+        playback_state = a;
+        document
+          .querySelector("#btn-stop")
+          .setAttribute("fill", playback_state !== undefined ? "red" : "gray");
+        
+        if (!a) setCurrentState(undefined);
+      }
+      function setCurrentState(a) {
+        current_state = a;
+        if (a === undefined) return;
+        document.querySelector("#showcase").value = a;
+      }
+      // Actioners
+      var highlighted = undefined;
+      function highlightState(i) {
+        console.log(i, document.querySelector("#commandList").children[i]);
+
+        if (highlighted !== undefined)
+          document.querySelector("#commandList").children[
+            highlighted
+          ].classList.value = "col p-2 command";
+
+        highlighted = i;
+        document.querySelector("#commandList").children[i].classList.value =
+          "col p-2 command border border-info";
+        setTimeout(() => {
+          document.querySelector("#commandList").children[i].classList.value =
+            "col p-2 command";
+          if (highlighted === i) highlighted = undefined;
+        }, getTimeout());
+      }
+      // Handlers
+      function playPressed() {
+        if (current_state !== undefined) return;
+        setCurrentState(document.querySelector("#original_text").value);
+        makeStep();
+      }
+      function makeStep(){
+        if (IS_STOPPED) {
+          setPlaybackState(false);
+          return;
+        }
+        for (let i in rules) {
+          const rule = rules[i];
+          let index = current_state.indexOf(rule[0]);
+          if (index == -1) continue;
+          setCurrentState(
+            current_state.slice(0, index) +
+              rule[2] +
+              current_state.slice(index + rule[0].length)
+          );
+          highlightState(i);
+          if (rule[1] == "1") return setPlaybackState(false);
+          return setTimeout(makeStep, getTimeout());
+        }
+        return setPlaybackState(false);
+      }
+      function stopPressed() {
+        IS_STOPPED = true;
+      }
+      function clearField() {
+        IS_STOPPED = true;
+        document.getElementById("original_text").value = "";
+        document.getElementById("showcase").value = "";
+      }
+
+      var data_space = Sortable.create(commandList, {
+        group: "items",
+        sort: true,
+        animation: 150,
+        handle: '.glyphicon-move',
+        swapThreshold: 1,
+        removeOnSpill: true,
+
+        onStart: function (evt) {
+          evt.item.classList.add("bg-secondary");
+        },
+
+        onEnd: function (evt) {
+          [rules[evt.oldIndex], rules[evt.newIndex]] = [rules[evt.newIndex], rules[evt.oldIndex]];
+          evt.item.classList.remove("bg-secondary");
+        }
+
+      })
+    </script>
+  </body>
+</html>
