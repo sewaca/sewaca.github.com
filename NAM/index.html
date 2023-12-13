@@ -164,7 +164,7 @@
         const res = [];
         for (let i of rulesOrder) {
           const rule = rules[i];
-          res.push(rule);
+          res.push([encodeURIComponent(rule[0]), rule[1], encodeURIComponent(rule[2])]);
         }
         const link = window.location.origin + window.location.pathname + "?q=" + btoa(JSON.stringify(res));
         window.history.pushState(res, "save", `?q=${encodeURIComponent(btoa(JSON.stringify(res)))}&s=${encodeURIComponent(document.querySelector("#original_text").value)}`);
@@ -185,7 +185,8 @@
             if (row.length !== 3 || (row[1] !== "0" && row[1] !== "1")) throw new Error("invalid link");
           })
           data.forEach((row)=>{
-            add_data_line(...row);
+            console.log(decodeURIComponent(row[0]), decodeURIComponent(row[1]), decodeURIComponent(row[2]))
+            add_data_line(decodeURIComponent(row[0]), decodeURIComponent(row[1]), decodeURIComponent(row[2]));
           })
           document.querySelector("#original_text").value = s;
         } catch (e) {
@@ -211,7 +212,7 @@
         container.classList.value = "col p-2 command";
         container.innerHTML = `<div class="input-group">
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-grip-vertical glyphicon-move align-self-center" viewBox="0 0 16 16"><path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></svg>
-          <input type="text" class="form-control text-center command-belong" oninput="rules[${rules.length - 1}][0] = this.value" value="${arr1}">
+          <input type="text" class="form-control text-center command-belong" oninput="rules[${rules.length - 1}][0] = this.value" value="${arr1.replace(/"/g, "&quot;")}">
           <div class="input-group-prepend">
             <select class="form-select command-belong" 
               onchange="rules[${rules.length - 1}][1] = this.value">
@@ -219,7 +220,7 @@
               <option ${opt === "1" ? `selected=""` : ""} value="1">|➜</option>
             </select> 
           </div>
-          <input type="text" class="form-control text-center command-belong" oninput="rules[${rules.length - 1}][2] = this.value" value="${arr2}">  </div>`;
+          <input type="text" class="form-control text-center command-belong" oninput="rules[${rules.length - 1}][2] = this.value" value="${arr2.replace(/"/g, "&quot;")}">  </div>`;
 
         document.querySelector("#commandList").appendChild(container);
       }
