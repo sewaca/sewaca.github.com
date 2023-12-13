@@ -150,6 +150,7 @@
       var IS_STOPPED = true;
 
       const rules = [];
+      const rulesOrder = [];
       add_data_line();
 
       const getTimeout = () =>
@@ -157,6 +158,7 @@
       function add_data_line(arr1 = "", opt = "0", arr2 = "") {
         IS_STOPPED = true;
         rules.push(["", "0", ""]);
+        rulesOrder.push(rules.length - 1);
 
         // (e)=>(rules[${
         //     rules.length - 1 }][0] = e.target.value)
@@ -223,7 +225,7 @@
           setPlaybackState(false);
           return;
         }
-        for (let i in rules) {
+        for (let i of rulesOrder) {
           const rule = rules[i];
           let index = current_state.indexOf(rule[0]);
           if (index == -1) continue;
@@ -253,12 +255,16 @@
         animation: 150,
         handle: '.glyphicon-move',
         swapThreshold: 1,
-        removeOnSpill: true,
+        removeOnSpill: false,
         onStart: function (evt) {
           evt.item.classList.add("bg-secondary");
         },
         onEnd: function (evt) {
-          [rules[evt.oldIndex], rules[evt.newIndex]] = [rules[evt.newIndex], rules[evt.oldIndex]];
+          [rulesOrder[evt.oldIndex], rulesOrder[evt.newIndex]] = [
+            rulesOrder[evt.newIndex],
+            rulesOrder[evt.oldIndex],
+          ];
+
           evt.item.classList.remove("bg-secondary");
         }
 
