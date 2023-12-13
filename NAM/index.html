@@ -110,6 +110,9 @@
               d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"
             ></path>
           </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" fill="orange" class="bi bi-share shadow rounded-circle mx-2" viewBox="-6 -7 30 30" onclick="generate_share()">
+            <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"></path>
+          </svg>
         </div>
         <div class="d-flex justify-content-center">
           <input
@@ -151,13 +154,49 @@
 
       const rules = [];
       const rulesOrder = [];
-      add_data_line();
+
+      function generate_share(){
+        const res = [];
+        for (let i of rulesOrder) {
+          const rule = rules[i];
+          res.push(rule);
+        }
+        const link = window.location.origin + window.location.pathname + "?q=" + btoa(JSON.stringify(res));
+        window.history.pushState(res, "save", `?q=${encodeURIComponent(btoa(JSON.stringify(res)))}&s=${encodeURIComponent(document.querySelector("#original_text").value)}`);
+        alert("Ссылка сгенерирована.");
+      }
+
+      function restoreData(){
+        const url = new URL(window.location.href);
+        let query = url.searchParams.get('q');
+        let s = url.searchParams.get('s') || "";
+        
+        if (!query) return add_data_line();
+        
+        console.log(query);
+        try {
+          let data = JSON.parse(atob(query));
+          data.forEach((row)=>{
+            if (row.length !== 3 || (row[1] !== "0" && row[1] !== "1")) throw new Error("invalid link");
+          })
+          data.forEach((row)=>{
+            add_data_line(...row);
+          })
+          document.querySelector("#original_text").value = s;
+        } catch (e) {
+          console.error(e);
+          alert("Invalid link...");
+          return add_data_line();
+        }
+      }
+
+      restoreData ();
 
       const getTimeout = () =>
         Number(document.querySelector("#speed-limit").value);
       function add_data_line(arr1 = "", opt = "0", arr2 = "") {
         IS_STOPPED = true;
-        rules.push(["", "0", ""]);
+        rules.push([arr1, opt, arr2]);
         rulesOrder.push(rules.length - 1);
 
         // (e)=>(rules[${
@@ -167,15 +206,15 @@
         container.classList.value = "col p-2 command";
         container.innerHTML = `<div class="input-group">
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-grip-vertical glyphicon-move align-self-center" viewBox="0 0 16 16"><path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></svg>
-          <input type="text" class="form-control text-center command-belong" oninput="rules[${rules.length - 1}][0] = this.value">
+          <input type="text" class="form-control text-center command-belong" oninput="rules[${rules.length - 1}][0] = this.value" value="${arr1}">
           <div class="input-group-prepend">
             <select class="form-select command-belong" 
               onchange="rules[${rules.length - 1}][1] = this.value">
-              <option selected="" value="0">➜</option>
-              <option value="1" class="text-danger">|➜</option>
+              <option ${opt === "0" ? `selected=""` : ""} value="0">➜</option>
+              <option ${opt === "1" ? `selected=""` : ""} value="1">|➜</option>
             </select> 
           </div>
-          <input type="text" class="form-control text-center command-belong" oninput="rules[${rules.length - 1}][2] = this.value">  </div>`;
+          <input type="text" class="form-control text-center command-belong" oninput="rules[${rules.length - 1}][2] = this.value" value="${arr2}">  </div>`;
 
         document.querySelector("#commandList").appendChild(container);
       }
@@ -248,6 +287,8 @@
         document.getElementById("original_text").value = "";
         document.getElementById("showcase").value = "";
       }
+
+      
 
       var data_space = Sortable.create(commandList, {
         group: "items",
