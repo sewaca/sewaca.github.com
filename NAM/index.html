@@ -168,7 +168,10 @@
         }
         const link = window.location.origin + window.location.pathname + "?q=" + btoa(JSON.stringify(res));
         window.history.pushState(res, "save", `?q=${encodeURIComponent(btoa(JSON.stringify(res)))}&s=${encodeURIComponent(document.querySelector("#original_text").value)}`);
-        alert("Ссылка сгенерирована.");
+        fetch(`https://tinyurl.com/api-create.php?url=${window.location.href}`)
+          .then(res=>res.text())
+          .then(url=>prompt("Полученная ссылка: ", url));
+        
       }
 
       function restoreData(){
