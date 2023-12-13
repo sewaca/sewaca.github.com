@@ -177,15 +177,13 @@
         let s = url.searchParams.get('s') || "";
         
         if (!query) return add_data_line();
-        
-        console.log(query);
+      
         try {
           let data = JSON.parse(atob(query));
           data.forEach((row)=>{
             if (row.length !== 3 || (row[1] !== "0" && row[1] !== "1")) throw new Error("invalid link");
           })
           data.forEach((row)=>{
-            console.log(decodeURIComponent(row[0]), decodeURIComponent(row[1]), decodeURIComponent(row[2]))
             add_data_line(decodeURIComponent(row[0]), decodeURIComponent(row[1]), decodeURIComponent(row[2]));
           })
           document.querySelector("#original_text").value = s;
