@@ -28,6 +28,30 @@
       .main-controls-container svg {
         cursor: pointer;
       }
+      .deleteRowButton{
+        width: 38px;
+        height: 38px;
+        padding: 9px;
+        font-size: 0px;
+        border: 1px solid #ced4da;
+        border-left: 0px;
+        transition: .4s;
+        cursor: pointer;
+        background-color: #fff;
+      }
+      .deleteRowButton svg{
+        fill: #b72835;
+        transition: .2s;
+      }
+      .deleteRowButton:hover,
+      .deleteRowButton:focus{
+        background-color: #c70f20;
+      }
+      .deleteRowButton:hover svg,
+      .deleteRowButton:focus svg{
+        fill: #fff;
+      }
+
     </style>
   </head>
   <body>
@@ -253,7 +277,15 @@
           </div>
           <input type="text" class="form-control text-center command-belong" oninput="rules[${
             rules.length - 1
-          }][2] = this.value" value="${arr2.replace(/"/g, "&quot;")}">  </div>`;
+          }][2] = this.value" value="${arr2.replace(/"/g, "&quot;")}"> 
+          <button class="deleteRowButton" 
+          onClick="document.querySelector('#commandList > .command[data-index=&quot;${rules.length - 1}&quot;]').remove();">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+              </svg>
+            </button>
+          </div>`;
 
         document.querySelector("#commandList").appendChild(container);
       }
